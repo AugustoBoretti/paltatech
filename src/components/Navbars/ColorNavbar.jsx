@@ -31,12 +31,12 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
 } from "reactstrap";
 
 class ColorNavbar extends React.Component {
   state = {
-    navbarColor: "navbar-transparent"
+    navbarColor: "navbar-transparent",
   };
   componentDidMount() {
     window.addEventListener("scroll", this.changeNavbarColor);
@@ -50,14 +50,14 @@ class ColorNavbar extends React.Component {
       document.body.scrollTop > 299
     ) {
       this.setState({
-        navbarColor: "bg-info"
+        navbarColor: "bg-info",
       });
     } else if (
       document.documentElement.scrollTop < 300 ||
       document.body.scrollTop < 300
     ) {
       this.setState({
-        navbarColor: "navbar-transparent"
+        navbarColor: "navbar-transparent",
       });
     }
   };
@@ -68,7 +68,7 @@ class ColorNavbar extends React.Component {
           <Container>
             <div className="navbar-translate">
               <NavbarBrand to="/index" tag={Link} id="tooltip6619950104">
-                <span>BLK•</span> Design System PRO React
+                <span>MATE •</span> TECH
               </NavbarBrand>
               <UncontrolledTooltip delay={0} target="tooltip6619950104">
                 Designed and Coded by Creative Tim
@@ -83,7 +83,7 @@ class ColorNavbar extends React.Component {
               <div className="navbar-collapse-header">
                 <Row>
                   <Col className="collapse-brand" xs="6">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
                       BLK• <span>PRO React</span>
                     </a>
                   </Col>
@@ -226,7 +226,7 @@ class ColorNavbar extends React.Component {
                         className="dropdown-item"
                         tag="a"
                         href="#pablo"
-                        onClick={e => e.preventDefault()}
+                        onClick={(e) => e.preventDefault()}
                       >
                         <i
                           aria-hidden={true}

@@ -25,7 +25,7 @@ import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
 
 // presentation pages
-import Index from "views/Index.jsx";
+import IndexOld from "views/Index.jsx";
 import Presentation from "views/Presentation.jsx";
 import Sections from "views/Sections.jsx";
 // example pages
@@ -47,11 +47,13 @@ import ResetPage from "views/examples/ResetPage.jsx";
 import InvoicePage from "views/examples/InvoicePage.jsx";
 import CheckoutPage from "views/examples/CheckoutPage.jsx";
 import ChatPage from "views/examples/ChatPage.jsx";
+// Mate Tech Pages
+import Index from "pages/Index.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/index" render={props => <Index {...props} />} />
+      <Route path="/index" render={props => <IndexOld {...props} />} />
       <Route
         path="/presentation"
         render={props => <Presentation {...props} />}
@@ -96,7 +98,7 @@ ReactDOM.render(
         render={props => <CheckoutPage {...props} />}
       />
       <Route path="/chat-page" render={props => <ChatPage {...props} />} />
-      <Redirect from="/" to="/presentation" />
+      <Route path="/" render={props => <Index {...props} />} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

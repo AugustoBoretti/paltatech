@@ -68,7 +68,7 @@ class ColorNavbar extends React.Component {
           <Container>
             <div className="navbar-translate">
               <NavbarBrand to="/index" tag={Link} id="tooltip6619950104">
-                <span>MATE •</span> TECH
+                <span>PALTA •</span> TECH
               </NavbarBrand>
               <UncontrolledTooltip delay={0} target="tooltip6619950104">
                 Designed and Coded by Creative Tim

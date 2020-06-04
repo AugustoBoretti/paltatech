@@ -41,7 +41,7 @@ class Index extends React.Component {
             <Row className="align-items-center text-left">
               <Col lg="6" xs="12">
                 <h1 className="title">
-                  Mate <br />
+                  Palta <br />
                   <strong className="text-info">TECH</strong>
                 </h1>
                 <p className="description">
@@ -102,7 +102,7 @@ class Index extends React.Component {
                           style={{ overflow: "visible" }}
                           transform="matrix(0.9488 0 0 0.9488 25 53.1187)"
                           width="800"
-                          xlinkHref={require("assets/img/img_352.png")}
+                          xlinkHref={require("assets/img/img_avocado.png")}
                         />
                       </g>
                     </g>
@@ -129,7 +129,7 @@ class Index extends React.Component {
                           style={{ overflow: "visible" }}
                           transform="matrix(0.9488 0 0 0.9488 25 53.1187)"
                           width="900"
-                          xlinkHref={require("assets/img/img_352.png")}
+                          xlinkHref={require("assets/img/img_avocado.png")}
                         />
                       </g>
                     </g>

@@ -1,6 +1,6 @@
 {
-  "name": "mate.tech",
-  "homepage": "http://aletid5.github.io/mate.tech/",
+  "name": "palta.tech",
+  "homepage": "http://palta.tech",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -15,6 +15,7 @@
     "react-datetime": "2.16.3",
     "react-dom": "16.8.6",
     "react-google-maps": "9.4.5",
+    "react-particles-js": "^3.2.1",
     "react-router": "5.0.0",
     "react-router-dom": "5.0.0",
     "react-scripts": "3.0.1",
@@ -40,8 +41,8 @@
     "compile-sass": "node-sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.css src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css",
     "minify-sass": "node-sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.min.css src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.min.css --output-style compressed",
     "map-sass": "node-sass src/assets/scss/blk-design-system-pro-react.scss src/assets/css/blk-design-system-pro-react.css src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css --source-map true",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "set PUBLIC_URL=http://palta.tech && npm run build",
+    "deploy": "echo 'palta.tech' > ./build/CNAME && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

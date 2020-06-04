@@ -17,25 +17,18 @@
 import React from "react";
 
 // reactstrap components
-import {
-  Button,
-  Col,
-  Container,
-  Input,
-  Nav,
-  Navbar,
-  NavbarBrand,
-  NavItem,
-  NavLink,
-  Row,
-  UncontrolledCollapse,
-} from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 class WhoWeAre extends React.Component {
   render() {
     return (
       <>
-        <div className="page-header">
+        <div className="section section-basic">
+          <img
+            alt="..."
+            className="path"
+            src={require("assets/img/path1.png")}
+          />
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="12">
@@ -47,7 +40,7 @@ class WhoWeAre extends React.Component {
             </Row>
             <div className="section-story-overview">
               <Row>
-                <Col md="6">
+                <Col xs="6">
                   <div
                     className="image-container image-left"
                     style={{
@@ -64,7 +57,7 @@ class WhoWeAre extends React.Component {
                     </p>
                   </div>
                 </Col>
-                <Col md="5">
+                <Col xs="6">
                   <div
                     className="image-container image-right"
                     style={{

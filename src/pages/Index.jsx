@@ -23,8 +23,6 @@ import DemoFooter from "components/Footers/DemoFooter.jsx";
 
 // Sections for this page
 // (we've divided this page into multiple react components to make it a bit more readable)
-import WhoWeAre from "./IndexSections/WhoWeAre.jsx";
-import Navbars from "./IndexSections/Navbars.jsx";
 import Tabs from "./IndexSections/Tabs.jsx";
 import Pills from "./IndexSections/Pills.jsx";
 import Pagination from "./IndexSections/Pagination.jsx";
@@ -37,6 +35,9 @@ import Cards from "./IndexSections/Cards.jsx";
 import PlainCards from "./IndexSections/PlainCards.jsx";
 import JavaScript from "./IndexSections/JavaScript.jsx";
 import NucleoIcons from "./IndexSections/NucleoIcons.jsx";
+import WhoWeAre from "./IndexSections/WhoWeAre";
+import TheTeam from "./IndexSections/TheTeam";
+import OurTechnologies from "./IndexSections/OurTechnologies";
 
 class Index extends React.Component {
   componentDidMount() {
@@ -58,7 +59,8 @@ class Index extends React.Component {
           <IndexHeader />
           <div className="main">
             <WhoWeAre />
-            <WhoWeAre />
+            <TheTeam />
+            <OurTechnologies />
             <Tabs />
             <Pills />
             <Pagination />

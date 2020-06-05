@@ -17,9 +17,9 @@
 import React from "react";
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.jsx";
-import IndexHeader from "components/Headers/IndexHeader.jsx";
-import DemoFooter from "components/Footers/DemoFooter.jsx";
+import ColorNavbar from "customComponents/Navbars/ColorNavbar.jsx";
+import IndexHeader from "customComponents/Headers/IndexHeader.jsx";
+import DemoFooter from "customComponents/Footers/DemoFooter.jsx";
 
 // Sections for this page
 import WhoWeAre from "./IndexSections/WhoWeAre";
@@ -28,12 +28,21 @@ import OurTechnologies from "./IndexSections/OurTechnologies";
 import WhatTheySay from "./IndexSections/WhatTheySay";
 import GetInTouch from "./IndexSections/GetInTouch";
 
+const references = new Array(6).fill(React.createRef());
+
+const Wrapper = React.createRef();
+const WhoWeAreRef = React.createRef();
+const TheTeamRef = React.createRef();
+const OurTechnologiesRef = React.createRef();
+const WhatTheySayRef = React.createRef();
+const GetInTouchRef = React.createRef();
+
 class Index extends React.Component {
   componentDidMount() {
     document.body.classList.add("index-page");
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
-    this.refs.wrapper.scrollTop = 0;
+    Wrapper.current.scrollTop = 0;
   }
 
   componentWillUnmount() {
@@ -43,15 +52,23 @@ class Index extends React.Component {
   render() {
     return (
       <>
-        <ColorNavbar />
-        <div className="wrapper" ref="wrapper">
+        <ColorNavbar
+          references={[
+            WhoWeAreRef,
+            TheTeamRef,
+            OurTechnologiesRef,
+            WhatTheySayRef,
+            WhatTheySayRef,
+          ]}
+        />
+        <div className="wrapper" ref={Wrapper}>
           <IndexHeader />
           <div className="main">
-            <WhoWeAre />
-            <TheTeam />
-            <OurTechnologies />
-            <WhatTheySay />
-            <GetInTouch />
+            <WhoWeAre setRef={WhoWeAreRef} />
+            <TheTeam setRef={TheTeamRef} />
+            <OurTechnologies setRef={OurTechnologiesRef} />
+            <WhatTheySay setRef={WhatTheySayRef} />
+            <GetInTouch setRef={GetInTouchRef} />
           </div>
           <DemoFooter />
         </div>

@@ -22,22 +22,11 @@ import IndexHeader from "components/Headers/IndexHeader.jsx";
 import DemoFooter from "components/Footers/DemoFooter.jsx";
 
 // Sections for this page
-// (we've divided this page into multiple react components to make it a bit more readable)
-import Tabs from "./IndexSections/Tabs.jsx";
-import Pills from "./IndexSections/Pills.jsx";
-import Pagination from "./IndexSections/Pagination.jsx";
-import Notifications from "./IndexSections/Notifications.jsx";
-import PreFooter from "./IndexSections/PreFooter.jsx";
-import Footers from "./IndexSections/Footers.jsx";
-import Typography from "./IndexSections/Typography.jsx";
-import ContentAreas from "./IndexSections/ContentAreas.jsx";
-import Cards from "./IndexSections/Cards.jsx";
-import PlainCards from "./IndexSections/PlainCards.jsx";
-import JavaScript from "./IndexSections/JavaScript.jsx";
-import NucleoIcons from "./IndexSections/NucleoIcons.jsx";
 import WhoWeAre from "./IndexSections/WhoWeAre";
 import TheTeam from "./IndexSections/TheTeam";
 import OurTechnologies from "./IndexSections/OurTechnologies";
+import WhatTheySay from "./IndexSections/WhatTheySay";
+import GetInTouch from "./IndexSections/GetInTouch";
 
 class Index extends React.Component {
   componentDidMount() {
@@ -61,18 +50,8 @@ class Index extends React.Component {
             <WhoWeAre />
             <TheTeam />
             <OurTechnologies />
-            <Tabs />
-            <Pills />
-            <Pagination />
-            <Notifications />
-            <PreFooter />
-            <Footers />
-            <Typography />
-            <ContentAreas />
-            <Cards />
-            <PlainCards />
-            <JavaScript />
-            <NucleoIcons />
+            <WhatTheySay />
+            <GetInTouch />
           </div>
           <DemoFooter />
         </div>

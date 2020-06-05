@@ -16,7 +16,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // styles
 import "assets/css/nucleo-icons.css";
@@ -53,52 +53,52 @@ import Index from "pages/Index.jsx";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/index" render={props => <IndexOld {...props} />} />
+      <Route path="/index" render={(props) => <IndexOld {...props} />} />
       <Route
         path="/presentation"
-        render={props => <Presentation {...props} />}
+        render={(props) => <Presentation {...props} />}
       />
-      <Route path="/sections" render={props => <Sections {...props} />} />
-      <Route path="/about-us" render={props => <AboutUs {...props} />} />
-      <Route path="/blog-post" render={props => <BlogPost {...props} />} />
-      <Route path="/blog-posts" render={props => <BlogPosts {...props} />} />
-      <Route path="/contact-us" render={props => <ContactUs {...props} />} />
+      <Route path="/sections" render={(props) => <Sections {...props} />} />
+      <Route path="/about-us" render={(props) => <AboutUs {...props} />} />
+      <Route path="/blog-post" render={(props) => <BlogPost {...props} />} />
+      <Route path="/blog-posts" render={(props) => <BlogPosts {...props} />} />
+      <Route path="/contact-us" render={(props) => <ContactUs {...props} />} />
       <Route
         path="/landing-page"
-        render={props => <LandingPage {...props} />}
+        render={(props) => <LandingPage {...props} />}
       />
-      <Route path="/pricing" render={props => <Pricing {...props} />} />
-      <Route path="/ecommerce" render={props => <Ecommerce {...props} />} />
+      <Route path="/pricing" render={(props) => <Pricing {...props} />} />
+      <Route path="/ecommerce" render={(props) => <Ecommerce {...props} />} />
       <Route
         path="/product-page"
-        render={props => <ProductPage {...props} />}
+        render={(props) => <ProductPage {...props} />}
       />
       <Route
         path="/profile-page"
-        render={props => <ProfilePage {...props} />}
+        render={(props) => <ProfilePage {...props} />}
       />
-      <Route path="/404-error" render={props => <Error404 {...props} />} />
-      <Route path="/500-error" render={props => <Error500 {...props} />} />
+      <Route path="/404-error" render={(props) => <Error404 {...props} />} />
+      <Route path="/500-error" render={(props) => <Error500 {...props} />} />
       <Route
         path="/account-settings"
-        render={props => <AccountSettings {...props} />}
+        render={(props) => <AccountSettings {...props} />}
       />
-      <Route path="/login-page" render={props => <LoginPage {...props} />} />
+      <Route path="/login-page" render={(props) => <LoginPage {...props} />} />
       <Route
         path="/register-page"
-        render={props => <RegisterPage {...props} />}
+        render={(props) => <RegisterPage {...props} />}
       />
-      <Route path="/reset-page" render={props => <ResetPage {...props} />} />
+      <Route path="/reset-page" render={(props) => <ResetPage {...props} />} />
       <Route
         path="/invoice-page"
-        render={props => <InvoicePage {...props} />}
+        render={(props) => <InvoicePage {...props} />}
       />
       <Route
         path="/checkout-page"
-        render={props => <CheckoutPage {...props} />}
+        render={(props) => <CheckoutPage {...props} />}
       />
-      <Route path="/chat-page" render={props => <ChatPage {...props} />} />
-      <Route path="/" render={props => <Index {...props} />} />
+      <Route path="/chat-page" render={(props) => <ChatPage {...props} />} />
+      <Route path="/" render={(props) => <Index {...props} />} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

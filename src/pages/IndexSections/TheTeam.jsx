@@ -28,7 +28,6 @@ import {
   DropdownItem,
   CardBody,
   Table,
-  Button,
 } from "reactstrap";
 
 class TheTeam extends React.Component {
@@ -41,7 +40,7 @@ class TheTeam extends React.Component {
               <Col className="ml-auto mr-auto" md="12">
                 <h1 className="title">
                   The <br />
-                  <strong className="text-info">TEAM</strong>
+                  <strong className="text-danger">TEAM</strong>
                 </h1>
               </Col>
             </Row>

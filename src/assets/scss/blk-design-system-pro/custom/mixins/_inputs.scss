@@ -112,6 +112,7 @@
         .input-group-prepend .input-group-text,
         .input-group-append .input-group-text{
             padding: $padding-vertical - 1 0 $padding-vertical - 1 $padding-horizontal - 1;
+            height: 34px;
 
             & + .form-control,
             & ~ .form-control{

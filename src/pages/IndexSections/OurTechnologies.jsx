@@ -18,19 +18,28 @@ import React from "react";
 
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
-import AvocadoPolygon from "../../components/Polygons/AvocadoPolygon";
 
 class OurTechnologies extends React.Component {
   render() {
     return (
       <div className="presentation-page">
-        <div className="section section-basic-components">
+        <div className="section section-basic-components section-typo">
+          <img
+            alt="..."
+            className="path"
+            src={require("assets/img/path1.png")}
+          />
+          <img
+            alt="..."
+            className="path path1"
+            src={require("assets/img/path3.png")}
+          />
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="12">
                 <h1 className="title">
                   Our <br />
-                  <strong className="text-info">TECHNOLOGIES</strong>
+                  <strong className="text-primary">TECHNOLOGIES</strong>
                 </h1>
               </Col>
             </Row>
@@ -56,7 +65,7 @@ class OurTechnologies extends React.Component {
                   <img
                     alt="..."
                     className="table-img"
-                    src="https://investment-prod.s3.amazonaws.com/investments/datadog/datadog_logo.svg"
+                    src="https://cdn.worldvectorlogo.com/logos/react-2.svg"
                   />
                   <img
                     alt="..."
@@ -66,7 +75,7 @@ class OurTechnologies extends React.Component {
                   <img
                     alt="..."
                     className="coloured-card-btn-img"
-                    src="https://cdn.worldvectorlogo.com/logos/react-2.svg"
+                    src="https://github.githubassets.com/images/modules/logos_page/Octocat.png"
                   />
                   <img
                     alt="..."
@@ -76,12 +85,12 @@ class OurTechnologies extends React.Component {
                   <img
                     alt="..."
                     className="social-img"
-                    src="https://1000marcas.net/wp-content/uploads/2020/02/Docker-Logo.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png"
                   />
                   <img
                     alt="..."
                     className="linkedin-btn-img"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png"
+                    src="https://1000marcas.net/wp-content/uploads/2020/02/Docker-Logo.png"
                   />
                 </div>
               </Col>

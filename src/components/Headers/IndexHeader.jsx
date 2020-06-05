@@ -42,7 +42,7 @@ class Index extends React.Component {
               <Col lg="6" xs="12">
                 <h1 className="title">
                   Palta <br />
-                  <strong className="text-info">TECH</strong>
+                  <strong className="text-success">TECH</strong>
                 </h1>
                 <p className="description">
                   We aim high at being focused on building relationships with

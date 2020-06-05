@@ -26,7 +26,7 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
 } from "reactstrap";
 
 class DemoFooter extends React.Component {
@@ -37,7 +37,10 @@ class DemoFooter extends React.Component {
           <Container>
             <Row>
               <Col md="3">
-                <h1 className="title">BLK• React</h1>
+                <h1 className="title">
+                  Palta <br />
+                  <strong className="text-success">TECH</strong>
+                </h1>
               </Col>
               <Col md="3" xs="6">
                 <Nav>

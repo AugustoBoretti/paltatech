@@ -34,7 +34,7 @@ class WhoWeAre extends React.Component {
               <Col className="ml-auto mr-auto" md="12">
                 <h1 className="title">
                   Who <br />
-                  <strong className="text-info">WE ARE?</strong>
+                  <strong className="text-warning">WE ARE?</strong>
                 </h1>
               </Col>
             </Row>

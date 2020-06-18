@@ -41,6 +41,8 @@ class ColorNavbar extends React.Component {
 
   state = {
     navbarColor: "navbar-transparent",
+    selectedColor: "bg-black-transparent",
+    buttonColor: "info",
   };
 
   componentDidMount() {
@@ -57,7 +59,7 @@ class ColorNavbar extends React.Component {
       document.body.scrollTop > 299
     ) {
       this.setState({
-        navbarColor: "bg-info",
+        navbarColor: this.state.selectedColor,
       });
     } else if (
       document.documentElement.scrollTop < 300 ||
@@ -85,13 +87,11 @@ class ColorNavbar extends React.Component {
 
   render() {
     const [
-      WhoWeAreRef,
+      WhyPaltaRef,
       TheTeamRef,
       OurTechnologiesRef,
       WhatTheySayRef,
     ] = this.props.references;
-
-    const isSmallRender = window.innerWidth < 998;
 
     return (
       <>
@@ -134,15 +134,16 @@ class ColorNavbar extends React.Component {
                   <DropdownToggle
                     nav
                     className={this.turnOnSection(
-                      WhoWeAreRef.current,
-                      "warning"
+                      WhyPaltaRef.current,
+                      "success"
                     )}
-                    onClick={() => this.scrollIntoView(WhoWeAreRef.current, 50)}
+                    onClick={() => this.scrollIntoView(WhyPaltaRef.current, 50)}
                   >
                     <i aria-hidden={true} className="tim-icons icon-bulb-63" />
-                    <p>Who we are</p>
+                    <p>Why Palta?</p>
                   </DropdownToggle>
-                  {isSmallRender && <br />}
+                </UncontrolledDropdown>
+                <UncontrolledDropdown nav>
                   <DropdownToggle
                     nav
                     className={this.turnOnSection(TheTeamRef.current, "danger")}
@@ -154,7 +155,8 @@ class ColorNavbar extends React.Component {
                     />
                     <p>The Team</p>
                   </DropdownToggle>
-                  {isSmallRender && <br />}
+                </UncontrolledDropdown>
+                <UncontrolledDropdown nav>
                   <DropdownToggle
                     nav
                     className={this.turnOnSection(
@@ -168,7 +170,8 @@ class ColorNavbar extends React.Component {
                     <i aria-hidden={true} className="tim-icons icon-atom" />
                     <p>Our Technologies</p>
                   </DropdownToggle>
-                  {isSmallRender && <br />}
+                </UncontrolledDropdown>
+                <UncontrolledDropdown nav>
                   <DropdownToggle
                     nav
                     className={this.turnOnSection(
@@ -184,14 +187,227 @@ class ColorNavbar extends React.Component {
                 <NavItem>
                   <Button
                     className="nav-link"
-                    color="dark"
+                    color={this.state.buttonColor}
                     href="#getInTouch"
                     size="sm"
                     target="_self"
                   >
-                    <p>Contact Us!</p>
+                    <p>Contact us!</p>
                   </Button>
                 </NavItem>
+                <UncontrolledDropdown nav>
+                  <DropdownToggle caret color="default" nav>
+                    <i
+                      aria-hidden={true}
+                      className="tim-icons icon-book-bookmark"
+                    />
+                    <p>Cambiar colores</p>
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <UncontrolledDropdown nav>
+                      <DropdownToggle
+                        caret
+                        color="default"
+                        className="dropdown-item"
+                        tag="a"
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        <i
+                          aria-hidden={true}
+                          className="tim-icons icon-palette"
+                        />
+                        Sitio
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem
+                          onClick={() => this.props.changeColor("")}
+                        >
+                          Normal
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() => this.props.changeColor("green")}
+                        >
+                          Verde
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() => this.props.changeColor("")}
+                        >
+                          Normal
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
+                    <UncontrolledDropdown nav>
+                      <DropdownToggle
+                        caret
+                        color="default"
+                        className="dropdown-item"
+                        tag="a"
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        <i
+                          aria-hidden={true}
+                          className="tim-icons icon-palette"
+                        />
+                        Color Navbar
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              selectedColor: "bg-danger",
+                              navbarColor: "bg-danger",
+                            })
+                          }
+                        >
+                          Rojo
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              selectedColor: "bg-success",
+                              navbarColor: "bg-success",
+                            })
+                          }
+                        >
+                          Verde
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              selectedColor: "bg-info",
+                              navbarColor: "bg-info",
+                            })
+                          }
+                        >
+                          Azul
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              selectedColor: "bg-warning",
+                              navbarColor: "bg-warning",
+                            })
+                          }
+                        >
+                          Naranja
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              selectedColor: "bg-primary",
+                              navbarColor: "bg-primary",
+                            })
+                          }
+                        >
+                          Violeta
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              selectedColor: "bg-default",
+                              navbarColor: "bg-default",
+                            })
+                          }
+                        >
+                          Gris
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              selectedColor: "navbar-transparent",
+                              navbarColor: "navbar-transparent",
+                            })
+                          }
+                        >
+                          Transparente
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
+                    <UncontrolledDropdown nav>
+                      <DropdownToggle
+                        caret
+                        color="default"
+                        className="dropdown-item"
+                        tag="a"
+                        href="#pablo"
+                        onClick={(e) => e.preventDefault()}
+                      >
+                        <i
+                          aria-hidden={true}
+                          className="tim-icons icon-palette"
+                        />
+                        Botón "Contact us"
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              buttonColor: "danger",
+                            })
+                          }
+                        >
+                          Rojo
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              buttonColor: "success",
+                            })
+                          }
+                        >
+                          Verde
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              buttonColor: "info",
+                            })
+                          }
+                        >
+                          Azul
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              buttonColor: "warning",
+                            })
+                          }
+                        >
+                          Naranja
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              buttonColor: "primary",
+                            })
+                          }
+                        >
+                          Violeta
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              buttonColor: "default",
+                            })
+                          }
+                        >
+                          Gris
+                        </DropdownItem>
+                        <DropdownItem
+                          onClick={() =>
+                            this.setState({
+                              buttonColor: "link",
+                            })
+                          }
+                        >
+                          Transparente
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
+                  </DropdownMenu>
+                </UncontrolledDropdown>
               </Nav>
             </UncontrolledCollapse>
           </Container>

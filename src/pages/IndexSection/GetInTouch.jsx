@@ -37,10 +37,15 @@ import {
   Button,
 } from "reactstrap";
 
-const GetInTouch = ({ setRef }) => {
+import Pulse from "react-reveal/Pulse";
+import Zoom from "react-reveal/Zoom";
+
+const GetInTouch = ({ cardColor, setRef }) => {
+  const innerColor = cardColor === "green" ? "success" : cardColor;
+
   return (
     <div
-      className="contactus-1 section-image"
+      className={`contactus-1 section-image ${cardColor}`}
       style={{
         backgroundImage: "url(" + require("assets/img/contact1.jpg") + ")",
       }}
@@ -51,8 +56,14 @@ const GetInTouch = ({ setRef }) => {
         <Row>
           <Col md="5">
             <h1 className="title">
-              Get <br />
-              <strong className="text-danger">IN TOUCH</strong>
+              <Zoom top cascade>
+                Get
+              </Zoom>
+              <strong className="text-danger">
+                <Zoom top cascade>
+                  IN TOUCH
+                </Zoom>
+              </strong>
             </h1>
             <h4 className="description">
               You need more information? Check what other persons are saying
@@ -86,7 +97,7 @@ const GetInTouch = ({ setRef }) => {
             </div>
           </Col>
           <Col className="ml-auto mr-auto" md="5">
-            <Card className="card-contact card-raised">
+            <Card className={`${cardColor} card-contact card-raised`}>
               <Form id="contact-form" method="post" role="form">
                 <CardHeader className="text-center">
                   <CardTitle tag="h4">Contact Us</CardTitle>
@@ -101,7 +112,7 @@ const GetInTouch = ({ setRef }) => {
                         })}
                       >
                         <InputGroupAddon addonType="prepend">
-                          <InputGroupText>
+                          <InputGroupText className={`border-${innerColor}`}>
                             <i className="tim-icons icon-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
@@ -119,6 +130,7 @@ const GetInTouch = ({ setRef }) => {
                               firstNameContact1Focus: false,
                             })
                           }
+                          className={`border-${innerColor}`}
                         />
                       </InputGroup>
                     </Col>
@@ -131,7 +143,7 @@ const GetInTouch = ({ setRef }) => {
                           })}
                         >
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
+                            <InputGroupText className={`border-${innerColor}`}>
                               <i className="tim-icons icon-caps-small" />
                             </InputGroupText>
                           </InputGroupAddon>
@@ -149,6 +161,7 @@ const GetInTouch = ({ setRef }) => {
                                 lastNameContact1Focus: false,
                               })
                             }
+                            className={`border-${innerColor}`}
                           />
                         </InputGroup>
                       </FormGroup>
@@ -162,7 +175,7 @@ const GetInTouch = ({ setRef }) => {
                       })}
                     >
                       <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
+                        <InputGroupText className={`border-${innerColor}`}>
                           <i className="tim-icons icon-email-85" />
                         </InputGroupText>
                       </InputGroupAddon>
@@ -175,6 +188,7 @@ const GetInTouch = ({ setRef }) => {
                         onBlur={(e) =>
                           this.setState({ emailContact1Focus: false })
                         }
+                        className={`border-${innerColor}`}
                       />
                     </InputGroup>
                   </FormGroup>
@@ -185,6 +199,7 @@ const GetInTouch = ({ setRef }) => {
                       name="message"
                       rows="6"
                       type="textarea"
+                      className={`border-${innerColor}`}
                     />
                   </FormGroup>
                   <Row>
@@ -192,13 +207,18 @@ const GetInTouch = ({ setRef }) => {
                       <FormGroup check>
                         <Label check>
                           <Input type="checkbox" />
-                          <span className="form-check-sign" />
+                          <span
+                            className={`form-check-sign bg-${innerColor}`}
+                          />
                           I'm not a robot
                         </Label>
                       </FormGroup>
                     </Col>
                     <Col md="6">
-                      <Button className="pull-right" color="info">
+                      <Button
+                        className="pull-right"
+                        color={cardColor === "green" ? "success" : "info"}
+                      >
                         Send Message
                       </Button>
                     </Col>
@@ -211,6 +231,10 @@ const GetInTouch = ({ setRef }) => {
       </Container>
     </div>
   );
+};
+
+GetInTouch.defaultProps = {
+  cardColor: "default",
 };
 
 export default GetInTouch;

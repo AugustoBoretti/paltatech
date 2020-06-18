@@ -29,22 +29,27 @@ import {
   CardBody,
   Table,
 } from "reactstrap";
+import Flip from "react-reveal/Flip";
 
-const TheTeam = ({ setRef }) => {
+const TheTeam = ({ cardColor, setRef }) => {
+  const lineColor = cardColor === "green" ? "line-success" : "line-primary";
+
   return (
     <div className="section section-basic" ref={setRef}>
       <Container>
         <Row>
           <Col className="ml-auto mr-auto" md="12">
             <h1 className="title">
-              The <br />
-              <strong className="text-danger">TEAM</strong>
+              <Flip cascade>The</Flip>
+              <Flip cascade>
+                <strong className="text-danger">TEAM</strong>
+              </Flip>
             </h1>
           </Col>
         </Row>
         <Row>
           <Col md="4">
-            <Card className="card-profile">
+            <Card className={`${cardColor} card-profile`}>
               <div className="card-image">
                 <h4 className="title">Alan Kurc</h4>
                 <UncontrolledDropdown>
@@ -88,7 +93,7 @@ const TheTeam = ({ setRef }) => {
                 </a>
               </div>
               <CardBody>
-                <hr className="line-primary" />
+                <hr className={lineColor} />
                 <h3 className="job-title">UX Designer</h3>
                 <Table className="tablesorter" responsive>
                   <tbody>
@@ -116,7 +121,7 @@ const TheTeam = ({ setRef }) => {
             </Card>
           </Col>
           <Col md="4">
-            <Card className="card-profile">
+            <Card className={`${cardColor} card-profile`}>
               <div className="card-image">
                 <h4 className="title">Augusto Boretti</h4>
                 <UncontrolledDropdown>
@@ -160,7 +165,7 @@ const TheTeam = ({ setRef }) => {
                 </a>
               </div>
               <CardBody>
-                <hr className="line-primary" />
+                <hr className={lineColor} />
                 <h3 className="job-title">Team Lead</h3>
                 <Table className="tablesorter" responsive>
                   <tbody>
@@ -188,7 +193,7 @@ const TheTeam = ({ setRef }) => {
             </Card>
           </Col>
           <Col md="4">
-            <Card className="card-profile">
+            <Card className={`${cardColor} card-profile`}>
               <div className="card-image">
                 <h4 className="title">Alejandro Tidele</h4>
                 <UncontrolledDropdown>
@@ -232,7 +237,7 @@ const TheTeam = ({ setRef }) => {
                 </a>
               </div>
               <CardBody>
-                <hr className="line-primary" />
+                <hr className={lineColor} />
                 <h3 className="job-title">Software Developer</h3>
                 <Table className="tablesorter" responsive>
                   <tbody>
@@ -265,6 +270,10 @@ const TheTeam = ({ setRef }) => {
       </Container>
     </div>
   );
+};
+
+TheTeam.defaultProps = {
+  cardColor: "",
 };
 
 export default TheTeam;

@@ -28,44 +28,48 @@ import {
   CardFooter,
   Card,
 } from "reactstrap";
+
 import Slick from "react-slick";
 
+import Slide from "react-reveal/Slide";
+
 // custom previous button for the slick component
-const PrevButton = (props) => {
+const PrevButton = ({ innerColor, onClick }) => {
   return (
     <Button
       className="btn-round btn-icon btn-simple slick-prev slick-arrow"
-      color="primary"
+      color={innerColor}
       aria-label="Previous"
       type="button"
-      onClick={props.onClick}
+      onClick={onClick}
     >
       <i className="tim-icons icon-minimal-left" />
     </Button>
   );
 };
 // custom next button for the slick component
-const NextButton = (props) => {
+const NextButton = ({ innerColor, onClick }) => {
   return (
     <Button
       className="btn-round btn-icon btn-simple slick-next slick-arrow"
-      color="primary"
+      color={innerColor}
       aria-label="Next"
       type="button"
+      onClick={onClick}
     >
-      <i className="tim-icons icon-minimal-right" onClick={props.onClick} />
+      <i className="tim-icons icon-minimal-right" />
     </Button>
   );
 };
 
-let slickSettings = {
+let slickSettings = ({ innerColor }) => ({
   dots: false,
   infinite: true,
   centerMode: true,
   slidesToShow: 4,
   slidesToScroll: 1,
-  prevArrow: <PrevButton />,
-  nextArrow: <NextButton />,
+  prevArrow: <PrevButton innerColor={innerColor} />,
+  nextArrow: <NextButton innerColor={innerColor} />,
   className: "center slider",
   slide: "section",
   responsive: [
@@ -95,9 +99,13 @@ let slickSettings = {
     // settings: "unslick"
     // instead of a settings object
   ],
-};
+});
 
-const WhatTheySay = ({ setRef }) => {
+const WhatTheySay = ({ cardColor, setRef }) => {
+  const innerColor = cardColor === "green" ? "success" : "primary";
+
+  const sliderSettings = slickSettings({ innerColor });
+
   return (
     <div className="cd-section" ref={setRef}>
       <div className="testimonials-4">
@@ -105,8 +113,12 @@ const WhatTheySay = ({ setRef }) => {
           <Row>
             <Col className="ml-auto mr-auto" md="12">
               <h1 className="title">
-                What <br />
-                <strong className="text-info">THEY SAY</strong>
+                <Slide right cascade>
+                  What
+                </Slide>
+                <Slide left cascade>
+                  <strong className="text-info">THEY SAY</strong>
+                </Slide>
               </h1>
             </Col>
           </Row>
@@ -114,9 +126,9 @@ const WhatTheySay = ({ setRef }) => {
         <Container fluid>
           <Row>
             <Col md="12">
-              <Slick {...slickSettings}>
+              <Slick {...sliderSettings}>
                 <div>
-                  <Card className="card-profile profile-bg">
+                  <Card className={`${cardColor} card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -135,7 +147,9 @@ const WhatTheySay = ({ setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Byron Reese</CardTitle>
-                      <h6 className="category text-primary">Credit Analyst</h6>
+                      <h6 className={`category text-${innerColor}`}>
+                        Credit Analyst
+                      </h6>
                       <p className="card-description">
                         Multi-Cloud Object Storage and Data Mobility: A GigaOm
                         Market Landscape Report has been announced...
@@ -145,7 +159,7 @@ const WhatTheySay = ({ setRef }) => {
                       <div className="follow float-left">
                         <Button
                           className="btn-simple"
-                          color="primary"
+                          color={innerColor}
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"
@@ -184,7 +198,7 @@ const WhatTheySay = ({ setRef }) => {
                   </Card>
                 </div>
                 <div>
-                  <Card className="card-profile profile-bg">
+                  <Card className={`${cardColor} card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -203,7 +217,7 @@ const WhatTheySay = ({ setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Melanie Paisley</CardTitle>
-                      <h6 className="category text-primary">Writer</h6>
+                      <h6 className={`category text-${innerColor}`}>Writer</h6>
                       <p className="card-description">
                         Over the years, advancement in CRM technology has
                         reshaped the way SMBs and SMEs manage their workflows...
@@ -212,7 +226,7 @@ const WhatTheySay = ({ setRef }) => {
                     <CardFooter>
                       <div className="follow float-left">
                         <Button
-                          color="primary"
+                          color={innerColor}
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"
@@ -250,7 +264,7 @@ const WhatTheySay = ({ setRef }) => {
                   </Card>
                 </div>
                 <div>
-                  <Card className="card-profile profile-bg">
+                  <Card className={`${cardColor} card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -271,7 +285,9 @@ const WhatTheySay = ({ setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Jon Collins</CardTitle>
-                      <h6 className="category text-primary">Data Specialist</h6>
+                      <h6 className={`category text-${innerColor}`}>
+                        Data Specialist
+                      </h6>
                       <p className="card-description">
                         Scaling DevOps: Strategy &amp; Technical Considerations
                         for Successful Enterprise DevOps
@@ -281,7 +297,7 @@ const WhatTheySay = ({ setRef }) => {
                       <div className="follow float-left">
                         <Button
                           className="btn-simple"
-                          color="primary"
+                          color={innerColor}
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"
@@ -320,7 +336,7 @@ const WhatTheySay = ({ setRef }) => {
                   </Card>
                 </div>
                 <div>
-                  <Card className="card-profile profile-bg">
+                  <Card className={`${cardColor} card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -341,7 +357,9 @@ const WhatTheySay = ({ setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Jon Collins</CardTitle>
-                      <h6 className="category text-primary">Data Specialist</h6>
+                      <h6 className={`category text-${innerColor}`}>
+                        Data Specialist
+                      </h6>
                       <p className="card-description">
                         Scaling DevOps: Strategy &amp; Technical Considerations
                         for Successful Enterprise DevOps
@@ -351,7 +369,7 @@ const WhatTheySay = ({ setRef }) => {
                       <div className="follow float-left">
                         <Button
                           className="btn-simple"
-                          color="primary"
+                          color={innerColor}
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"
@@ -390,7 +408,7 @@ const WhatTheySay = ({ setRef }) => {
                   </Card>
                 </div>
                 <div>
-                  <Card className="card-profile profile-bg">
+                  <Card className={`${cardColor} card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -411,7 +429,9 @@ const WhatTheySay = ({ setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Jon Collins</CardTitle>
-                      <h6 className="category text-primary">Data Specialist</h6>
+                      <h6 className={`category text-${innerColor}`}>
+                        Data Specialist
+                      </h6>
                       <p className="card-description">
                         Scaling DevOps: Strategy &amp; Technical Considerations
                         for Successful Enterprise DevOps
@@ -421,7 +441,7 @@ const WhatTheySay = ({ setRef }) => {
                       <div className="follow float-left">
                         <Button
                           className="btn-simple"
-                          color="primary"
+                          color={innerColor}
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"

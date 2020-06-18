@@ -18,6 +18,7 @@ import React from "react";
 
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
+import LightSpeed from "react-reveal/LightSpeed";
 
 const OurTechnologies = ({ setRef }) => {
   return (
@@ -33,8 +34,10 @@ const OurTechnologies = ({ setRef }) => {
           <Row>
             <Col className="ml-auto mr-auto" md="12">
               <h1 className="title">
-                Our <br />
-                <strong className="text-primary">TECHNOLOGIES</strong>
+                <LightSpeed cascade>Our</LightSpeed>
+                <LightSpeed cascade>
+                  <strong className="text-primary">TECHNOLOGIES</strong>
+                </LightSpeed>
               </h1>
             </Col>
           </Row>

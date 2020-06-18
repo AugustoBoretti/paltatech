@@ -18,8 +18,10 @@ import React from "react";
 
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
+import Zoom from "react-reveal/Zoom";
+import Slide from "react-reveal/Slide";
 
-const WhoWeAre = ({ setRef }) => {
+const WhyPalta = ({ setRef }) => {
   return (
     <div className="section section-basic" ref={setRef}>
       <img alt="..." className="path" src={require("assets/img/path1.png")} />
@@ -27,8 +29,14 @@ const WhoWeAre = ({ setRef }) => {
         <Row>
           <Col className="ml-auto mr-auto" md="12">
             <h1 className="title">
-              Who <br />
-              <strong className="text-warning">WE ARE?</strong>
+              <Zoom left cascade>
+                Why
+              </Zoom>
+              <strong className="text-success">
+                <Zoom right cascade>
+                  PALTA?
+                </Zoom>
+              </strong>
             </h1>
           </Col>
         </Row>
@@ -58,27 +66,42 @@ const WhoWeAre = ({ setRef }) => {
                   backgroundImage: "url(" + require("assets/img/p10.jpg") + ")",
                 }}
               />
-              <h3>
-                So what does the new record for the lowest level of winter ice
-                actually mean
-              </h3>
-              <p>
-                The Arctic Ocean freezes every winter and much of the sea-ice
-                then thaws every summer, and that process will continue whatever
-                happens with climate change. Even if the Arctic continues to be
-                one of the fastest-warming regions of the world, it will always
-                be plunged into bitterly cold polar dark every winter. And
-                year-by-year, for all kinds of natural reasons, there’s huge
-                variety of the state of the ice.
-              </p>
-              <p>
-                For a start, it does not automatically follow that a record
-                amount of ice will melt this summer. More important for
-                determining the size of the annual thaw is the state of the
-                weather as the midnight sun approaches and temperatures rise.
-                But over the more than 30 years of satellite records, scientists
-                have observed a clear pattern of decline, decade-by-decade.
-              </p>
+              <h3>We hate to brag, but here's some stuff we're awesome at.</h3>
+              <Slide right>
+                <p>Hearing and understanding your startup needs.</p>
+              </Slide>
+              <Slide right>
+                <p>
+                  Our diverse team composed by scientists, developers and
+                  designers, are all your startup needs to turn your ideas into
+                  solutions!
+                </p>
+              </Slide>
+              <Slide right>
+                <p>Being your partner.</p>
+              </Slide>
+              <Slide right>
+                <p>
+                  Our company does not aim to be just another number on your
+                  contact list. We aim to be a reliable partner, helping you to
+                  achieve all the milestones your company has.
+                </p>
+              </Slide>
+              <Slide right>
+                <p>Showing why you are the best!</p>
+              </Slide>
+              <Slide right>
+                <p>
+                  We love deep tech companies, but we love more helping them to
+                  change the world!
+                </p>
+              </Slide>
+              <Slide right>
+                <p>
+                  Let us help you showing your public, what your awesome company
+                  means
+                </p>
+              </Slide>
             </Col>
           </Row>
         </div>
@@ -87,4 +110,4 @@ const WhoWeAre = ({ setRef }) => {
   );
 };
 
-export default WhoWeAre;
+export default WhyPalta;

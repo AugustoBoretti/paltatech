@@ -109,7 +109,8 @@
 .btn-primary { @include btn-styles($primary, $primary-states);
 
               }
-.btn-success { @include btn-styles($success, $success-states);
+.btn-success { //@include btn-styles($success, $success-states);
+               @include btn-styles(#1bad76, #1bad76);
 
               }
 .btn-info    { @include btn-styles($info, $info-states);

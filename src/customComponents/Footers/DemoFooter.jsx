@@ -28,67 +28,70 @@ import {
   Col,
   UncontrolledTooltip,
 } from "reactstrap";
+import Zoom from "react-reveal/Zoom";
 
-class DemoFooter extends React.Component {
-  render() {
-    return (
-      <>
-        <footer className="footer">
-          <Container>
-            <Row>
-              <Col md="3">
-                <h1 className="title">
-                  Palta <br />
-                  <strong className="text-success">TECH</strong>
-                </h1>
-              </Col>
-              <Col xs="6" />
-              <Col md="3">
-                <div className="btn-wrapper profile text-left mt-5">
-                  <Button
-                    className="btn-icon btn-neutral btn-round btn-simple"
-                    color="default"
-                    href="https://twitter.com/palta.tech"
-                    id="tooltip39661217"
-                    target="_blank"
-                  >
-                    <i className="fab fa-twitter" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip39661217">
-                    Follow us
-                  </UncontrolledTooltip>
-                  <Button
-                    className="btn-icon btn-neutral btn-round btn-simple ml-1"
-                    color="default"
-                    href="https://www.facebook.com/palta.tech"
-                    id="tooltip206037619"
-                    target="_blank"
-                  >
-                    <i className="fab fa-facebook-square" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip206037619">
-                    Like us
-                  </UncontrolledTooltip>
-                  <Button
-                    className="btn-icon btn-neutral btn-round btn-simple ml-1"
-                    color="default"
-                    href="https://dribbble.com/palta.tech"
-                    id="tooltip750293512"
-                    target="_blank"
-                  >
-                    <i className="fab fa-instagram" />
-                  </Button>
-                  <UncontrolledTooltip delay={0} target="tooltip750293512">
-                    Follow us
-                  </UncontrolledTooltip>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </footer>
-      </>
-    );
-  }
-}
+const DemoFooter = ({ cardColor }) => {
+  return (
+    <footer className={`footer ${cardColor}`}>
+      <Container>
+        <Row>
+          <Col md="3">
+            <h1 className="title">
+              <Zoom left cascade>
+                Palta
+              </Zoom>
+              <strong className="text-success">
+                <Zoom right cascade>
+                  TECH
+                </Zoom>
+              </strong>
+            </h1>
+          </Col>
+          <Col xs="6" />
+          <Col md="3">
+            <div className="btn-wrapper profile text-left mt-5">
+              <Button
+                className="btn-icon btn-neutral btn-round btn-simple"
+                color="default"
+                href="https://twitter.com/palta.tech"
+                id="tooltip39661217"
+                target="_blank"
+              >
+                <i className="fab fa-twitter" />
+              </Button>
+              <UncontrolledTooltip delay={0} target="tooltip39661217">
+                Follow us
+              </UncontrolledTooltip>
+              <Button
+                className="btn-icon btn-neutral btn-round btn-simple ml-1"
+                color="default"
+                href="https://www.facebook.com/palta.tech"
+                id="tooltip206037619"
+                target="_blank"
+              >
+                <i className="fab fa-facebook-square" />
+              </Button>
+              <UncontrolledTooltip delay={0} target="tooltip206037619">
+                Like us
+              </UncontrolledTooltip>
+              <Button
+                className="btn-icon btn-neutral btn-round btn-simple ml-1"
+                color="default"
+                href="https://instagram.com/palta.tech_"
+                id="tooltip750293512"
+                target="_blank"
+              >
+                <i className="fab fa-instagram" />
+              </Button>
+              <UncontrolledTooltip delay={0} target="tooltip750293512">
+                Follow us
+              </UncontrolledTooltip>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
+  );
+};
 
 export default DemoFooter;

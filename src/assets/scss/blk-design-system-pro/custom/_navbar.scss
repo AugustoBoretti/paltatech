@@ -108,11 +108,17 @@
   }
 
   &.bg-success {
-    background-color: darken($success, 10%) !important;
+    //background-color: darken($success, 10%) !important;
+    background-color: #1fe89d82 !important;
   }
 
   &.bg-danger {
     background-color: $danger !important;
+  }
+
+  &.bg-black-transparent {
+    background: linear-gradient(180deg, #000000b0 0%, rgba(255,255,255,0) 100%);
+    background-color: transparent !important;
   }
 
   .navbar-brand {

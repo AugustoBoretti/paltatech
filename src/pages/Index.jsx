@@ -22,22 +22,27 @@ import IndexHeader from "customComponents/Headers/IndexHeader.jsx";
 import DemoFooter from "customComponents/Footers/DemoFooter.jsx";
 
 // Sections for this page
-import WhoWeAre from "./IndexSections/WhoWeAre";
-import TheTeam from "./IndexSections/TheTeam";
-import OurTechnologies from "./IndexSections/OurTechnologies";
-import WhatTheySay from "./IndexSections/WhatTheySay";
-import GetInTouch from "./IndexSections/GetInTouch";
+import WhoWeAre from "./IndexSection/WhoWeAre";
+import TheTeam from "./IndexSection/TheTeam";
+import OurTechnologies from "./IndexSection/OurTechnologies";
+import WhatTheySay from "./IndexSection/WhatTheySay";
+import GetInTouch from "./IndexSection/GetInTouch";
 
-const references = new Array(6).fill(React.createRef());
+import dots from "../assets/img/dots2.png";
+import WhyPalta from "./IndexSection/WhyPalta";
 
 const Wrapper = React.createRef();
-const WhoWeAreRef = React.createRef();
+const WhyPaltaRef = React.createRef();
 const TheTeamRef = React.createRef();
 const OurTechnologiesRef = React.createRef();
 const WhatTheySayRef = React.createRef();
 const GetInTouchRef = React.createRef();
 
 class Index extends React.Component {
+  state = {
+    mainColor: "",
+  };
+
   componentDidMount() {
     document.body.classList.add("index-page");
     document.documentElement.scrollTop = 0;
@@ -49,30 +54,52 @@ class Index extends React.Component {
     document.body.classList.remove("index-page");
   }
 
+  changeColor = (mainColor) => {
+    this.setState({
+      mainColor,
+    });
+  };
+
   render() {
+    const cardProps = {
+      backgroundImage: this.state.mainColor !== "" && `url(${dots})`,
+      backgroundSize: this.state.mainColor !== "" && "contain",
+      backgroundColor: this.state.mainColor !== "" && "#184139",
+    };
+
     return (
-      <>
+      <div style={cardProps}>
         <ColorNavbar
           references={[
-            WhoWeAreRef,
+            WhyPaltaRef,
             TheTeamRef,
             OurTechnologiesRef,
             WhatTheySayRef,
-            WhatTheySayRef,
           ]}
+          changeColor={this.changeColor}
+          cardColor={this.state.mainColor}
         />
         <div className="wrapper" ref={Wrapper}>
-          <IndexHeader />
+          <IndexHeader
+            cardColor={this.state.mainColor}
+            whyPaltaRef={WhyPaltaRef}
+          />
           <div className="main">
-            <WhoWeAre setRef={WhoWeAreRef} />
-            <TheTeam setRef={TheTeamRef} />
+            <WhyPalta setRef={WhyPaltaRef} />
+            <TheTeam setRef={TheTeamRef} cardColor={this.state.mainColor} />
             <OurTechnologies setRef={OurTechnologiesRef} />
-            <WhatTheySay setRef={WhatTheySayRef} />
-            <GetInTouch setRef={GetInTouchRef} />
+            <WhatTheySay
+              setRef={WhatTheySayRef}
+              cardColor={this.state.mainColor}
+            />
+            <GetInTouch
+              setRef={GetInTouchRef}
+              cardColor={this.state.mainColor}
+            />
           </div>
-          <DemoFooter />
+          <DemoFooter cardColor={this.state.mainColor} />
         </div>
-      </>
+      </div>
     );
   }
 }

@@ -265,6 +265,10 @@
       opacity: 0.1;
     }
   }
+  .squares-green {
+    @extend .squares;
+    background: linear-gradient(0deg, #1bbc80 0%, #1bbc80 100%) !important;
+  }
 }
 
 .landing-page {

@@ -44,6 +44,11 @@
     }
 }
 
+.footer.green {
+  @extend .footer;
+  border-top: 2px solid #43b571;
+  background: radial-gradient(ellipse at bottom, #295961 30%, #174137 80%);
+}
 
 @media screen and (max-width: 991px){
   .footer {

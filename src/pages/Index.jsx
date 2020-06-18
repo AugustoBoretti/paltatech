@@ -38,7 +38,7 @@ const OurTechnologiesRef = React.createRef();
 const WhatTheySayRef = React.createRef();
 const GetInTouchRef = React.createRef();
 
-class Index extends React.Component {
+export default class Index extends React.Component {
   state = {
     mainColor: "",
   };
@@ -103,5 +103,3 @@ class Index extends React.Component {
     );
   }
 }
-
-export default Index;

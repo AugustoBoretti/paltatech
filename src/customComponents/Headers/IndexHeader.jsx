@@ -88,10 +88,10 @@ class Index extends React.Component {
                 </h3>
               </div>
               <div className="mt-5">
-                <h3>
-                  A software factory focused on bringin web solutions to
-                  deeptech startups!
-                </h3>
+                <h2>
+                  A software factory focused on bringing web solutions to
+                  deep-tech startups!
+                </h2>
                 <Button
                   className="btn-icon btn-round btn-icon-pulse mt-5"
                   color="success"

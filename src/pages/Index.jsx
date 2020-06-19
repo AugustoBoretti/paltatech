@@ -30,6 +30,7 @@ import GetInTouch from "./IndexSection/GetInTouch";
 
 import dots from "../assets/img/dots2.png";
 import WhyPalta from "./IndexSection/WhyPalta";
+import Info from "../oldViews/PresentationSections/Info";
 
 const Wrapper = React.createRef();
 const WhyPaltaRef = React.createRef();
@@ -85,6 +86,7 @@ export default class Index extends React.Component {
             whyPaltaRef={WhyPaltaRef}
           />
           <div className="main">
+            <Info />
             <WhyPalta setRef={WhyPaltaRef} />
             <TheTeam setRef={TheTeamRef} cardColor={this.state.mainColor} />
             <OurTechnologies setRef={OurTechnologiesRef} />

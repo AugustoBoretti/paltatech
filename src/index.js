@@ -31,6 +31,7 @@ import Index from "pages/Index";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
+      <Route path="/test" render={(props) => <Index {...props} />} />
       <Route path="/" render={(props) => <Index {...props} />} />
     </Switch>
   </BrowserRouter>,

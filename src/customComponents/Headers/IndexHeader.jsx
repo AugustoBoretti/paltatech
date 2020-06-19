@@ -20,6 +20,7 @@ import React from "react";
 import { Button, Container } from "reactstrap";
 
 import Zoom from "react-reveal/Zoom";
+import MovingText from "../Text/MovingText";
 
 class Index extends React.Component {
   state = {
@@ -60,7 +61,7 @@ class Index extends React.Component {
             ready: true,
             content: (
               <Zoom top cascade>
-                <img src={require("assets/img/palta.png")} alt="..." />
+                <img src={require("assets/img/palta-gif.gif")} alt="..." />
               </Zoom>
             ),
           },
@@ -80,14 +81,19 @@ class Index extends React.Component {
           <div className={`squares-green square7`} />
           <Container>
             <div className="content-center brand">
-              <div>{this.getAvocadoLogo()}</div>
               <div>
-                <h3 style={{ position: "relative", top: "-5vh" }}>
-                  A software company that aims to bring you web solutions
-                  understanding digitization needs of deep tech startups and VC.
+                {this.getAvocadoLogo()}
+                <h3>
+                  <MovingText className="pt-5 pb-5" />
+                </h3>
+              </div>
+              <div className="mt-5">
+                <h3>
+                  A software factory focused on bringin web solutions to
+                  deeptech startups!
                 </h3>
                 <Button
-                  className="btn-icon btn-round btn-icon-pulse"
+                  className="btn-icon btn-round btn-icon-pulse mt-5"
                   color="success"
                   size="lg"
                   target="_blank"

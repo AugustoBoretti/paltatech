@@ -90,7 +90,7 @@ class Index extends React.Component {
               <div className="mt-5">
                 <h2>
                   A software factory focused on bringing web solutions to
-                  deep-tech startups!
+                  deeptech startups!
                 </h2>
                 <Button
                   className="btn-icon btn-round btn-icon-pulse mt-5"

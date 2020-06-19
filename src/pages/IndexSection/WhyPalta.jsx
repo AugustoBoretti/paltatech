@@ -20,6 +20,7 @@ import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
 import Slide from "react-reveal/Slide";
+import Info from "../../oldViews/PresentationSections/Info";
 
 const WhyPalta = ({ setRef }) => {
   return (
@@ -38,70 +39,69 @@ const WhyPalta = ({ setRef }) => {
                 </Zoom>
               </strong>
             </h1>
+            <h3>We hate to brag, but here's some stuff we're awesome at.</h3>
           </Col>
         </Row>
         <div className="section-story-overview">
           <Row>
-            <Col xs="6">
-              <div
-                className="image-container image-left"
-                style={{
-                  backgroundImage:
-                    "url(" + require("assets/img/bg31.jpg") + ")",
-                }}
-              >
-                <p className="blockquote blockquote-info">
-                  "Over the span of the satellite record, Arctic sea ice has
-                  been declining significantly, while sea ice in the
-                  Antarctichas increased very slightly" <br></br>
-                  <br></br>
-                  <small>-NOAA</small>
-                </p>
-              </div>
-            </Col>
-            <Col xs="6">
-              <div
-                className="image-container image-right"
-                style={{
-                  backgroundImage: "url(" + require("assets/img/p10.jpg") + ")",
-                }}
-              />
-              <h3>We hate to brag, but here's some stuff we're awesome at.</h3>
-              <Slide right>
-                <p>Hearing and understanding your startup needs.</p>
-              </Slide>
-              <Slide right>
-                <p>
+            <Col md="4">
+              <div className="info info-hover">
+                <div className="icon icon-primary">
+                  <img
+                    alt="..."
+                    className="bg-blob"
+                    src={require("assets/img/feature-blob/primary.png")}
+                  />
+                  <i className="tim-icons icon-user-run" />
+                </div>
+                <h2 className="info-title">
+                  Hearing and understanding your startup needs
+                </h2>
+                <h4 className="description">
                   Our diverse team composed by scientists, developers and
                   designers, are all your startup needs to turn your ideas into
                   solutions!
-                </p>
-              </Slide>
-              <Slide right>
-                <p>Being your partner.</p>
-              </Slide>
-              <Slide right>
-                <p>
+                </h4>
+              </div>
+            </Col>
+            <Col md="4">
+              <div className="info info-hover" style={{ marginTop: "-50px" }}>
+                <div className="icon icon-warning">
+                  <img
+                    alt="..."
+                    className="bg-blob"
+                    src={require("assets/img/feature-blob/warning.png")}
+                  />
+                  <i className="tim-icons icon-atom" />
+                </div>
+                <h2 className="info-title">Being your partner</h2>
+                <h4 className="description">
                   Our company does not aim to be just another number on your
                   contact list. We aim to be a reliable partner, helping you to
                   achieve all the milestones your company has.
-                </p>
-              </Slide>
-              <Slide right>
-                <p>Showing why you are the best!</p>
-              </Slide>
-              <Slide right>
-                <p>
-                  We love deep tech companies, but we love more helping them to
+                </h4>
+              </div>
+            </Col>
+            <Col md="4">
+              <div className="info info-hover">
+                <div className="icon icon-success">
+                  <img
+                    alt="..."
+                    className="bg-blob"
+                    src={require("assets/img/feature-blob/success.png")}
+                  />
+                  <i className="tim-icons icon-gift-2" />
+                </div>
+                <h2 className="info-title">Showing why you are the best!</h2>
+                <p className="description">
+                  We love deeptech companies, but we love more helping them to
                   change the world!
                 </p>
-              </Slide>
-              <Slide right>
-                <p>
+                <p className="description">
                   Let us help you showing your public, what your awesome company
-                  means
+                  means.
                 </p>
-              </Slide>
+              </div>
             </Col>
           </Row>
         </div>

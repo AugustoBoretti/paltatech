@@ -86,7 +86,6 @@ export default class Index extends React.Component {
             whyPaltaRef={WhyPaltaRef}
           />
           <div className="main">
-            <Info />
             <WhyPalta setRef={WhyPaltaRef} />
             <TheTeam setRef={TheTeamRef} cardColor={this.state.mainColor} />
             <OurTechnologies setRef={OurTechnologiesRef} />

@@ -5,10 +5,10 @@ const MovingText = ({ children }) => {
   React.useEffect(() => {
     new Typed("#static", {
       stringsElement: "#text-static",
-      typeSpeed: 75,
+      typeSpeed: 40,
       loop: false,
       smartBackspace: true,
-      backSpeed: 50,
+      backSpeed: 30,
       startDelay: 700,
       cursorChar: "",
       backDelay: 250,

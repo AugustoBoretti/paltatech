@@ -9,9 +9,6 @@ const credentials = require("./private/certification/siteCredentials");
 app.use(express.static(path.join(__dirname, "..", "build")));
 app.use(express.static("public"));
 app.use(express.static(__dirname, { dotfiles: "allow" }));
-app.use(function (req, res, next) {
-  req.secure ? next() : res.redirect("https://" + req.headers.host + req.url);
-});
 
 // Starting both http & https servers
 const httpServer = http.createServer(app);

@@ -77,11 +77,11 @@ class ColorNavbar extends React.Component {
             <div className="navbar-translate">
               <NavbarBrand to="/" tag={Link} id="brand">
                 <img
-                  src={require("assets/img/img_avocado.png")}
+                  src={require("assets/img/white-line-avocado.png")}
                   alt="..."
                   height="40px"
                 />
-                <span>PALTA •</span> TECH
+                <span className="ml-2">PALTA •</span> TECH
               </NavbarBrand>
               <UncontrolledTooltip delay={0} target="brand">
                 Designed and coded with ❤️ by Palta{" "}

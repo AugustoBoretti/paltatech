@@ -55,16 +55,23 @@ class Index extends React.Component {
           <Container>
             <div className="content-center brand">
               <div>
-                <img src={require("assets/img/palta-gif.gif")} alt="..." />
-                <h3>
-                  <MovingText className="pt-5 pb-5" />
+                <img
+                  src={require("assets/img/white-line-avocado.png")}
+                  alt="..."
+                />
+                <h3 className="rez-text mt-3">
+                  <span className="text-success fs-85 fw-100">palta</span>
+                  <span className="text-white fs-85 fw-100">tech</span>
                 </h3>
               </div>
               <div className="mt-5">
-                <h2>
-                  A software factory focused on bringing web solutions to
-                  deeptech startups!
-                </h2>
+                <MovingText>
+                  <div>A software factory with focus</div>
+                  <div>
+                    A software factory focused on bringing web solutions to
+                    deep-tech startups
+                  </div>
+                </MovingText>
                 <Button
                   className="btn-icon btn-round btn-icon-pulse mt-5"
                   color="success"

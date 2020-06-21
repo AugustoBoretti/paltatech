@@ -1,39 +1,24 @@
 import React from "react";
 import Typed from "typed.js";
 
-const MovingText = ({ className }) => {
+const MovingText = ({ children }) => {
   React.useEffect(() => {
-    new Typed("#modifiers", {
-      stringsElement: "#palta-modifier",
-      typeSpeed: 250,
+    new Typed("#static", {
+      stringsElement: "#text-static",
+      typeSpeed: 75,
       loop: false,
-      smartBackspace: false,
-      backSpeed: 150,
-      startDelay: 1000,
-    });
-    new Typed("#statics", {
-      stringsElement: "#palta-static",
-      typeSpeed: 100,
-      loop: false,
-      smartBackspace: false,
-      backSpeed: 90,
-      startDelay: 1000,
+      smartBackspace: true,
+      backSpeed: 50,
+      startDelay: 700,
       cursorChar: "",
+      backDelay: 250,
     });
   }, []);
 
   return (
-    <div className={`rez-text ${className}`}>
-      <span id="palta-static">
-        <div>hi</div>
-        <div>Delighted that you are here</div>
-        <div>we are palta</div>
-      </span>
-      <span id="palta-modifier">
-        <div>^10350TECH</div>
-      </span>
-      <span className="text-white fs-50" id="statics" />
-      <span className="text-success fs-50" id="modifiers" />
+    <div>
+      <span id="text-static">{children}</span>
+      <h2 id="static" />
     </div>
   );
 };

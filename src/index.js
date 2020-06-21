@@ -27,11 +27,12 @@ import "assets/demo/react-demo.css";
 
 // Palta Tech Pages
 import Index from "pages/Index";
+import TestParallax from "./customComponents/Parallax/TestParallax";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/test" render={(props) => <Index {...props} />} />
+      <Route path="/test" render={(props) => <TestParallax {...props} />} />
       <Route path="/" render={(props) => <Index {...props} />} />
     </Switch>
   </BrowserRouter>,

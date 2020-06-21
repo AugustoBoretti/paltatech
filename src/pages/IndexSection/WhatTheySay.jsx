@@ -34,11 +34,11 @@ import Slick from "react-slick";
 import Slide from "react-reveal/Slide";
 
 // custom previous button for the slick component
-const PrevButton = ({ innerColor, onClick }) => {
+const PrevButton = ({ onClick }) => {
   return (
     <Button
       className="btn-round btn-icon btn-simple slick-prev slick-arrow"
-      color={innerColor}
+      color="success"
       aria-label="Previous"
       type="button"
       onClick={onClick}
@@ -48,11 +48,11 @@ const PrevButton = ({ innerColor, onClick }) => {
   );
 };
 // custom next button for the slick component
-const NextButton = ({ innerColor, onClick }) => {
+const NextButton = ({ onClick }) => {
   return (
     <Button
       className="btn-round btn-icon btn-simple slick-next slick-arrow"
-      color={innerColor}
+      color="success"
       aria-label="Next"
       type="button"
       onClick={onClick}
@@ -62,14 +62,14 @@ const NextButton = ({ innerColor, onClick }) => {
   );
 };
 
-let slickSettings = ({ innerColor }) => ({
+let slickSettings = () => ({
   dots: false,
   infinite: true,
   centerMode: true,
   slidesToShow: 4,
   slidesToScroll: 1,
-  prevArrow: <PrevButton innerColor={innerColor} />,
-  nextArrow: <NextButton innerColor={innerColor} />,
+  prevArrow: <PrevButton />,
+  nextArrow: <NextButton />,
   className: "center slider",
   slide: "section",
   responsive: [
@@ -102,9 +102,7 @@ let slickSettings = ({ innerColor }) => ({
 });
 
 const WhatTheySay = ({ cardColor, setRef }) => {
-  const innerColor = cardColor === "green" ? "success" : "primary";
-
-  const sliderSettings = slickSettings({ innerColor });
+  const sliderSettings = slickSettings();
 
   return (
     <div className="cd-section" ref={setRef}>
@@ -128,7 +126,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
             <Col md="12">
               <Slick {...sliderSettings}>
                 <div>
-                  <Card className={`${cardColor} card-profile profile-bg`}>
+                  <Card className={`green card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -147,7 +145,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Byron Reese</CardTitle>
-                      <h6 className={`category text-${innerColor}`}>
+                      <h6 className={`category text-success`}>
                         Credit Analyst
                       </h6>
                       <p className="card-description">
@@ -159,7 +157,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                       <div className="follow float-left">
                         <Button
                           className="btn-simple"
-                          color={innerColor}
+                          color="success"
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"
@@ -198,7 +196,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                   </Card>
                 </div>
                 <div>
-                  <Card className={`${cardColor} card-profile profile-bg`}>
+                  <Card className={`green card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -217,7 +215,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Melanie Paisley</CardTitle>
-                      <h6 className={`category text-${innerColor}`}>Writer</h6>
+                      <h6 className={`category text-success`}>Writer</h6>
                       <p className="card-description">
                         Over the years, advancement in CRM technology has
                         reshaped the way SMBs and SMEs manage their workflows...
@@ -226,7 +224,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                     <CardFooter>
                       <div className="follow float-left">
                         <Button
-                          color={innerColor}
+                          color="success"
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"
@@ -264,7 +262,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                   </Card>
                 </div>
                 <div>
-                  <Card className={`${cardColor} card-profile profile-bg`}>
+                  <Card className={`green card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -285,7 +283,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Jon Collins</CardTitle>
-                      <h6 className={`category text-${innerColor}`}>
+                      <h6 className={`category text-success`}>
                         Data Specialist
                       </h6>
                       <p className="card-description">
@@ -297,7 +295,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                       <div className="follow float-left">
                         <Button
                           className="btn-simple"
-                          color={innerColor}
+                          color="success"
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"
@@ -336,7 +334,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                   </Card>
                 </div>
                 <div>
-                  <Card className={`${cardColor} card-profile profile-bg`}>
+                  <Card className={`green card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -357,7 +355,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Jon Collins</CardTitle>
-                      <h6 className={`category text-${innerColor}`}>
+                      <h6 className={`category text-success`}>
                         Data Specialist
                       </h6>
                       <p className="card-description">
@@ -369,7 +367,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                       <div className="follow float-left">
                         <Button
                           className="btn-simple"
-                          color={innerColor}
+                          color="success"
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"
@@ -408,7 +406,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                   </Card>
                 </div>
                 <div>
-                  <Card className={`${cardColor} card-profile profile-bg`}>
+                  <Card className={`green card-profile profile-bg`}>
                     <CardHeader
                       style={{
                         backgroundImage:
@@ -429,7 +427,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                     </CardHeader>
                     <CardBody>
                       <CardTitle tag="h3">Jon Collins</CardTitle>
-                      <h6 className={`category text-${innerColor}`}>
+                      <h6 className={`category text-success`}>
                         Data Specialist
                       </h6>
                       <p className="card-description">
@@ -441,7 +439,7 @@ const WhatTheySay = ({ cardColor, setRef }) => {
                       <div className="follow float-left">
                         <Button
                           className="btn-simple"
-                          color={innerColor}
+                          color="success"
                           href="#pablo"
                           onClick={(e) => e.preventDefault()}
                           size="sm"

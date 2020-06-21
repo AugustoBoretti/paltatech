@@ -30,9 +30,9 @@ import {
 } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
 
-const DemoFooter = ({ cardColor }) => {
+const DemoFooter = () => {
   return (
-    <footer className={`footer ${cardColor}`}>
+    <footer className={`footer green`}>
       <Container>
         <Row>
           <Col md="3">

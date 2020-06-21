@@ -22,7 +22,13 @@ import LightSpeed from "react-reveal/LightSpeed";
 
 const OurTechnologies = ({ setRef }) => {
   return (
-    <div className="presentation-page" ref={setRef}>
+    <div
+      className="presentation-page"
+      ref={setRef}
+      style={{
+        backgroundImage: "unset",
+      }}
+    >
       <div className="section section-basic-components section-typo">
         <img alt="..." className="path" src={require("assets/img/path1.png")} />
         <img

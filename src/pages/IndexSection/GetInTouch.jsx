@@ -40,12 +40,10 @@ import {
 import Pulse from "react-reveal/Pulse";
 import Zoom from "react-reveal/Zoom";
 
-const GetInTouch = ({ cardColor, setRef }) => {
-  const innerColor = cardColor === "green" ? "success" : cardColor;
-
+const GetInTouch = ({ setRef }) => {
   return (
     <div
-      className={`contactus-1 section-image ${cardColor}`}
+      className={`contactus-1 section-image green`}
       style={{
         backgroundImage: "url(" + require("assets/img/contact1.jpg") + ")",
       }}
@@ -97,14 +95,14 @@ const GetInTouch = ({ cardColor, setRef }) => {
             </div>
           </Col>
           <Col className="ml-auto mr-auto" md="5">
-            <Card className={`${cardColor} card-contact card-raised`}>
+            <Card className={`green card-contact card-raised`}>
               <Form id="contact-form" method="post" role="form">
                 <CardHeader className="text-center">
                   <CardTitle tag="h4">Contact Us</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Row>
-                    <Col md="6">
+                    <Col xs="12" md="6">
                       <label>First name</label>
                       <InputGroup
                         className={classnames({
@@ -112,7 +110,7 @@ const GetInTouch = ({ cardColor, setRef }) => {
                         })}
                       >
                         <InputGroupAddon addonType="prepend">
-                          <InputGroupText className={`border-${innerColor}`}>
+                          <InputGroupText className={`border-success`}>
                             <i className="tim-icons icon-single-02" />
                           </InputGroupText>
                         </InputGroupAddon>
@@ -120,21 +118,11 @@ const GetInTouch = ({ cardColor, setRef }) => {
                           aria-label="First Name..."
                           placeholder="First Name..."
                           type="text"
-                          onFocus={(e) =>
-                            this.setState({
-                              firstNameContact1Focus: true,
-                            })
-                          }
-                          onBlur={(e) =>
-                            this.setState({
-                              firstNameContact1Focus: false,
-                            })
-                          }
-                          className={`border-${innerColor}`}
+                          className={`border-success`}
                         />
                       </InputGroup>
                     </Col>
-                    <Col className="pl-2" md="6">
+                    <Col xs="12" md="6">
                       <FormGroup>
                         <label>Last name</label>
                         <InputGroup
@@ -143,7 +131,7 @@ const GetInTouch = ({ cardColor, setRef }) => {
                           })}
                         >
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText className={`border-${innerColor}`}>
+                            <InputGroupText className={`border-success`}>
                               <i className="tim-icons icon-caps-small" />
                             </InputGroupText>
                           </InputGroupAddon>
@@ -151,17 +139,7 @@ const GetInTouch = ({ cardColor, setRef }) => {
                             aria-label="Last Name..."
                             placeholder="Last Name..."
                             type="text"
-                            onFocus={(e) =>
-                              this.setState({
-                                lastNameContact1Focus: true,
-                              })
-                            }
-                            onBlur={(e) =>
-                              this.setState({
-                                lastNameContact1Focus: false,
-                              })
-                            }
-                            className={`border-${innerColor}`}
+                            className={`border-success`}
                           />
                         </InputGroup>
                       </FormGroup>
@@ -175,20 +153,14 @@ const GetInTouch = ({ cardColor, setRef }) => {
                       })}
                     >
                       <InputGroupAddon addonType="prepend">
-                        <InputGroupText className={`border-${innerColor}`}>
+                        <InputGroupText className={`border-success`}>
                           <i className="tim-icons icon-email-85" />
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
                         placeholder="Email Here..."
                         type="text"
-                        onFocus={(e) =>
-                          this.setState({ emailContact1Focus: true })
-                        }
-                        onBlur={(e) =>
-                          this.setState({ emailContact1Focus: false })
-                        }
-                        className={`border-${innerColor}`}
+                        className={`border-success`}
                       />
                     </InputGroup>
                   </FormGroup>
@@ -199,7 +171,7 @@ const GetInTouch = ({ cardColor, setRef }) => {
                       name="message"
                       rows="6"
                       type="textarea"
-                      className={`border-${innerColor}`}
+                      className={`border-success`}
                     />
                   </FormGroup>
                   <Row>
@@ -207,18 +179,13 @@ const GetInTouch = ({ cardColor, setRef }) => {
                       <FormGroup check>
                         <Label check>
                           <Input type="checkbox" />
-                          <span
-                            className={`form-check-sign bg-${innerColor}`}
-                          />
+                          <span className={`form-check-sign bg-success`} />
                           I'm not a robot
                         </Label>
                       </FormGroup>
                     </Col>
                     <Col md="6">
-                      <Button
-                        className="pull-right"
-                        color={cardColor === "green" ? "success" : "info"}
-                      >
+                      <Button className="pull-right" color="success">
                         Send Message
                       </Button>
                     </Col>

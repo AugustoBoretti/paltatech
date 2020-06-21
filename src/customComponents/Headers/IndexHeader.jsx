@@ -19,19 +19,9 @@ import React from "react";
 // reactstrap components
 import { Button, Container } from "reactstrap";
 
-import Zoom from "react-reveal/Zoom";
 import MovingText from "../Text/MovingText";
 
 class Index extends React.Component {
-  state = {
-    avocadoLogo: {
-      ready: false,
-      content: (
-        <img src={require("assets/img/palta-empty-scheleton.png")} alt="..." />
-      ),
-    },
-  };
-
   constructor(props) {
     super(props);
   }
@@ -44,8 +34,6 @@ class Index extends React.Component {
     document.body.classList.remove("index-page");
   }
 
-  getAvocadoLogo = () => this.state.avocadoLogo.content;
-
   scrollIntoView = (Section, extraTop = 0) => {
     window.scrollTo({
       behavior: "smooth",
@@ -54,21 +42,6 @@ class Index extends React.Component {
   };
 
   render() {
-    setTimeout(() => {
-      if (!this.state.avocadoLogo.ready) {
-        this.setState({
-          avocadoLogo: {
-            ready: true,
-            content: (
-              <Zoom top cascade>
-                <img src={require("assets/img/palta-gif.gif")} alt="..." />
-              </Zoom>
-            ),
-          },
-        });
-      }
-    }, 1000);
-
     return (
       <>
         <div className="page-header">
@@ -82,7 +55,7 @@ class Index extends React.Component {
           <Container>
             <div className="content-center brand">
               <div>
-                {this.getAvocadoLogo()}
+                <img src={require("assets/img/palta-gif.gif")} alt="..." />
                 <h3>
                   <MovingText className="pt-5 pb-5" />
                 </h3>

@@ -36,10 +36,6 @@ import {
 import AvocadoPolygon from "../../components/Polygons/AvocadoPolygon";
 
 class ColorNavbar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     window.addEventListener("scroll", this.changeNavbarColor);
   }
@@ -63,13 +59,6 @@ class ColorNavbar extends React.Component {
   };
 
   render() {
-    const [
-      WhyPaltaRef,
-      TheTeamRef,
-      OurTechnologiesRef,
-      WhatTheySayRef,
-    ] = this.props.references;
-
     return (
       <>
         <Navbar className="fixed-top navbar-transparent" expand="lg">

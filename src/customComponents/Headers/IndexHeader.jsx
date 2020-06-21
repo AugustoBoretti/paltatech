@@ -69,7 +69,7 @@ class Index extends React.Component {
                   <div>A software factory with focus</div>
                   <div>
                     A software factory focused on bringing web solutions to
-                    deep-tech startups
+                    deeptech startups
                   </div>
                 </MovingText>
                 <Button

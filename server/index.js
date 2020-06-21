@@ -1,19 +1,19 @@
 const path = require("path");
-const http = require('http');
-const https = require('https');
+const http = require("http");
+const https = require("https");
 const express = require("express");
 const app = express(); // create express app
 
 const privateKey = fs.readFileSync(
-  "/etc/letsencrypt/live/yourdomain.com/privkey.pem",
+  "/etc/letsencrypt/live/palta.tech/privkey.pem",
   "utf8"
 );
 const certificate = fs.readFileSync(
-  "/etc/letsencrypt/live/yourdomain.com/cert.pem",
+  "/etc/letsencrypt/live/palta.tech/cert.pem",
   "utf8"
 );
 const ca = fs.readFileSync(
-  "/etc/letsencrypt/live/yourdomain.com/chain.pem",
+  "/etc/letsencrypt/live/palta.tech/chain.pem",
   "utf8"
 );
 

@@ -21,7 +21,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 // styles
 import "assets/css/nucleo-icons.css";
 import "assets/css/rez.css";
-import "assets/scss/blk-design-system-pro-react.scss?v1.0.0";
+import "assets/scss/blk-design-system-pro-react.scss";
 import "assets/demo/demo.css";
 import "assets/demo/react-demo.css";
 

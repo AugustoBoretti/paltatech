@@ -15,23 +15,16 @@
 
 */
 import React from "react";
-
 // core components
 import ColorNavbar from "customComponents/Navbars/ColorNavbar.jsx";
 import IndexHeader from "customComponents/Headers/IndexHeader.jsx";
 import DemoFooter from "customComponents/Footers/DemoFooter.jsx";
-
 // Sections for this page
-import TheTeam from "./IndexSection/TheTeam";
-import OurTechnologies from "./IndexSection/OurTechnologies";
 import WhatTheySay from "./IndexSection/WhatTheySay";
 import GetInTouch from "./IndexSection/GetInTouch";
-
-import dots from "../assets/img/dots2.png";
 import WhyPalta from "./IndexSection/WhyPalta";
-import { Parallax, ParallaxLayer } from "react-spring/addons";
-import AvocadoParallax from "./ParallaxSection/AvocadoParallax";
-import StarsParallax from "./ParallaxSection/StarsParallax";
+import TestNewSection from "./IndexSection/TestNewSection";
+import BackedBy from "./IndexSection/BackedBy";
 
 const Wrapper = React.createRef();
 const WhyPaltaRef = React.createRef();
@@ -53,15 +46,8 @@ export default class Index extends React.Component {
   }
 
   render() {
-    const cardProps = {
-      backgroundImage: `url(${dots})`,
-      backgroundSize: "contain",
-    };
-
-    const { innerWidth } = window;
-
     return (
-      <div style={cardProps}>
+      <div>
         <ColorNavbar
           references={[
             WhyPaltaRef,
@@ -70,49 +56,17 @@ export default class Index extends React.Component {
             WhatTheySayRef,
           ]}
         />
-        {innerWidth < 770 ? (
-          <div className="wrapper" ref={Wrapper}>
-            <IndexHeader whyPaltaRef={WhyPaltaRef} />
-            <div className="main">
-              <WhyPalta setRef={WhyPaltaRef} />
-              <TheTeam setRef={TheTeamRef} />
-              <OurTechnologies setRef={OurTechnologiesRef} />
-              <WhatTheySay setRef={WhatTheySayRef} />
-              <GetInTouch setRef={GetInTouchRef} />
-            </div>
-            <DemoFooter />
+        <div className="wrapper" ref={Wrapper}>
+          <IndexHeader whyPaltaRef={WhyPaltaRef} />
+          <div className="main">
+            <TestNewSection right />
+            <TestNewSection />
+            <WhyPalta setRef={WhyPaltaRef} />
+            <WhatTheySay setRef={WhatTheySayRef} />
+            <GetInTouch setRef={GetInTouchRef} />
           </div>
-        ) : (
-          <Parallax ref={(ref) => (this.parallax = ref)} pages={5.75}>
-            <StarsParallax />
-            <AvocadoParallax />
-            <div className="wrapper" ref={Wrapper}>
-              <ParallaxLayer offset={0}>
-                <IndexHeader whyPaltaRef={WhyPaltaRef} />
-              </ParallaxLayer>
-              <div className="main">
-                <ParallaxLayer offset={1} speed={0.3}>
-                  <WhyPalta setRef={WhyPaltaRef} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={2} speed={0.3}>
-                  <TheTeam setRef={TheTeamRef} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={3} speed={1.3}>
-                  <OurTechnologies setRef={OurTechnologiesRef} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={4} speed={0.9}>
-                  <WhatTheySay setRef={WhatTheySayRef} />
-                </ParallaxLayer>
-                <ParallaxLayer offset={5}>
-                  <GetInTouch setRef={GetInTouchRef} />
-                </ParallaxLayer>
-              </div>
-              <ParallaxLayer offset={5.6}>
-                <DemoFooter />
-              </ParallaxLayer>
-            </div>
-          </Parallax>
-        )}
+          <DemoFooter />
+        </div>
       </div>
     );
   }

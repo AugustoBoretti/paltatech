@@ -20,11 +20,11 @@ import ColorNavbar from "customComponents/Navbars/ColorNavbar.jsx";
 import IndexHeader from "customComponents/Headers/IndexHeader.jsx";
 import DemoFooter from "customComponents/Footers/DemoFooter.jsx";
 // Sections for this page
-import WhatTheySay from "./IndexSection/WhatTheySay";
 import GetInTouch from "./IndexSection/GetInTouch";
 import WhyPalta from "./IndexSection/WhyPalta";
-import TestNewSection from "./IndexSection/TestNewSection";
+import OurServices from "./IndexSection/OurServices";
 import BackedBy from "./IndexSection/BackedBy";
+import OurWorks from "./IndexSection/OurWorks";
 
 const Wrapper = React.createRef();
 const WhyPaltaRef = React.createRef();
@@ -59,10 +59,10 @@ export default class Index extends React.Component {
         <div className="wrapper" ref={Wrapper}>
           <IndexHeader whyPaltaRef={WhyPaltaRef} />
           <div className="main">
-            <TestNewSection right />
-            <TestNewSection />
+            <OurServices />
             <WhyPalta setRef={WhyPaltaRef} />
-            <WhatTheySay setRef={WhatTheySayRef} />
+            <BackedBy />
+            <OurWorks />
             <GetInTouch setRef={GetInTouchRef} />
           </div>
           <DemoFooter />

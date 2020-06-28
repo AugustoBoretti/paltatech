@@ -21,7 +21,7 @@ const OurWorks = ({ setRef }) => {
               <Zoom left cascade>
                 Our
               </Zoom>
-              <strong className="text-info">
+              <strong className="text-success">
                 <Zoom right cascade>
                   Works
                 </Zoom>

@@ -1,0 +1,128 @@
+.perspective_image {
+  perspective: 900px;
+  width: 300px;
+  position: relative;
+  margin-top: 90px;
+
+  &.first {
+    z-index: 6;
+    left: 160px;
+  }
+  &.second {
+    z-index: 5;
+    left: 40px;
+  }
+  &.third {
+    z-index: 4;
+    right: 90px;
+  }
+  &.fourth {
+    z-index: 3;
+    right: 220px;
+  }
+
+  .image {
+    transform-style: preserve-3d;
+    position: relative;
+    height: 500px;
+
+    .front {
+      backface-visibility: hidden;
+      transform: rotateY(-35deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+      cursor: pointer;
+      box-shadow: 10px 4px 14px rgba(0,0,0,.12);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all .2s;
+    }
+
+    .front:hover {
+      transform: rotateY(-35deg) translate3d(0px, -90px, 0px);
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .perspective_image {
+    &.first {
+      left: 0px;
+    }
+    &.second {
+      left: -40px;
+    }
+    &.third {
+      right: 80px;
+    }
+    &.fourth {
+      right: 110px;
+    }
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .perspective_image {
+    &.first {
+      left: 0px;
+    }
+    &.second {
+      left: -50px;
+    }
+    &.third {
+      right: 90px;
+    }
+    &.fourth {
+      right: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .perspective_image {
+    &.first {
+      left: -70px;
+    }
+    &.second {
+      left: -90px
+    }
+    &.third {
+      right: 120px;
+    }
+    &.fourth {
+      right: 150px;
+    }
+
+    .image {
+      .front {
+        transform: rotateY(-55deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .perspective_image {
+    &.first {
+      left: 0;
+    }
+    &.second {
+      left: 0;
+    }
+    &.third {
+      right: 0;
+    }
+    &.fourth {
+      right: 0;
+    }
+
+    .image {
+      .front {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+}

@@ -107,7 +107,7 @@
   position: fixed;
   top: 50vh;
   right: 2vw;
-  z-index: 2;
+  z-index: 10;
 
   li {
     font-size: 20px;
@@ -152,3 +152,5 @@
     }
   }
 }
+
+@import "isometric";

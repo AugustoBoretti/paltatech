@@ -1,0 +1,248 @@
+.isometric {
+  &-1, &-2, &-3, &-4, &-5, &-6 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(0,0,0,0);
+    transform: rotate(35deg) skew(-20deg) scale(.8);
+    transition: 0.5s;
+  }
+
+
+  &-1 img, &-2 img, &-3 img, &-4 img, &-5 img, &-6 img {
+    position: absolute;
+    width: 100%;
+    transition: 0.5s;
+  }
+
+  &-section {
+    min-height: 100vh;
+  }
+}
+
+.isometric-1 {
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+.isometric-1:hover img:nth-child(4) {
+  transform: translate(-160px,-160px);
+  opacity: 1;
+}
+.isometric-1:hover img:nth-child(3) {
+  transform: translate(-120px,-120px);
+  opacity: .8;
+}
+.isometric-1:hover img:nth-child(2) {
+  transform: translate(-80px,-80px);
+  opacity: .6;
+}
+.isometric-1:hover img:nth-child(1) {
+  transform: translate(-40px,-40px);
+  opacity: .4;
+}
+
+.isometric-2 {
+  right: 0;
+  top: 210px;
+  z-index: 4;
+}
+.isometric-2:hover img:nth-child(4) {
+  transform: translate(-160px,-160px);
+  opacity: 1;
+}
+.isometric-2:hover img:nth-child(3) {
+  transform: translate(-120px,-120px);
+  opacity: .8;
+}
+.isometric-2:hover img:nth-child(2) {
+  transform: translate(-80px,-80px);
+  opacity: .6;
+}
+.isometric-2:hover img:nth-child(1) {
+  transform: translate(-40px,-40px);
+  opacity: .4;
+}
+
+.isometric-3 {
+  right: 0;
+  top: 420px;
+  z-index: 6;
+}
+.isometric-3:hover img:nth-child(4) {
+  transform: translate(-160px,-160px);
+  opacity: 1;
+}
+.isometric-3:hover img:nth-child(3) {
+  transform: translate(-120px,-120px);
+  opacity: .8;
+}
+.isometric-3:hover img:nth-child(2) {
+  transform: translate(-80px,-80px);
+  opacity: .6;
+}
+.isometric-3:hover img:nth-child(1) {
+  transform: translate(-40px,-40px);
+  opacity: .4;
+}
+
+.isometric-4 {
+  right: 300px;
+  top: 420px;
+  z-index: 5;
+}
+.isometric-4:hover img:nth-child(4) {
+  transform: translate(-160px,-160px);
+  opacity: 1;
+}
+.isometric-4:hover img:nth-child(3) {
+  transform: translate(-120px,-120px);
+  opacity: .8;
+}
+.isometric-4:hover img:nth-child(2) {
+  transform: translate(-80px,-80px);
+  opacity: .6;
+}
+.isometric-4:hover img:nth-child(1) {
+  transform: translate(-40px,-40px);
+  opacity: .4;
+}
+
+.isometric-5 {
+  right: 300px;
+  top: 210px;
+  z-index: 2;
+}
+.isometric-5:hover img:nth-child(4) {
+  transform: translate(-160px,-160px);
+  opacity: 1;
+}
+.isometric-5:hover img:nth-child(3) {
+  transform: translate(-120px,-120px);
+  opacity: .8;
+}
+.isometric-5:hover img:nth-child(2) {
+  transform: translate(-80px,-80px);
+  opacity: .6;
+}
+.isometric-5:hover img:nth-child(1) {
+  transform: translate(-40px,-40px);
+  opacity: .4;
+}
+
+.isometric-6 {
+  right: 600px;
+  top: 420px;
+  z-index: 3;
+}
+.isometric-6:hover img:nth-child(4) {
+  transform: translate(-160px,-160px);
+  opacity: 1;
+}
+.isometric-6:hover img:nth-child(3) {
+  transform: translate(-120px,-120px);
+  opacity: .8;
+}
+.isometric-6:hover img:nth-child(2) {
+  transform: translate(-80px,-80px);
+  opacity: .6;
+}
+.isometric-6:hover img:nth-child(1) {
+  transform: translate(-40px,-40px);
+  opacity: .4;
+}
+
+@media screen and (max-width: 992px) {
+  .isometric {
+    &-1, &-2, &-3, &-4, &-5, &-6 {
+      width: 150px;
+      height: 150px;
+    }
+
+    &-section {
+      min-height: 75vh;
+    }
+  }
+
+  .isometric-2 {
+    right: 0;
+    top: 160px;
+  }
+  .isometric-3 {
+    right: 0;
+    top: 320px;
+  }
+  .isometric-4 {
+    right: 230px;
+    top: 320px;
+  }
+  .isometric-5 {
+    right: 230px;
+    top: 160px;
+  }
+  .isometric-6 {
+    right: 460px;
+    top: 320px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .isometric {
+    &-1, &-2, &-3, &-4, &-5, &-6 {
+      width: 125px;
+      height: 125px;
+    }
+  }
+
+  .isometric-2 {
+    right: 0;
+    top: 140px;
+  }
+  .isometric-3 {
+    right: 0;
+    top: 280px;
+  }
+  .isometric-4 {
+    right: 200px;
+    top: 275px;
+  }
+  .isometric-5 {
+    right: 200px;
+    top: 135px;
+  }
+  .isometric-6 {
+    right: 390px;
+    top: 270px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .isometric {
+    &-1, &-2, &-3, &-4, &-5, &-6 {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .isometric-2 {
+    right: 0;
+    top: 100px;
+  }
+  .isometric-3 {
+    right: 0;
+    top: 200px;
+  }
+  .isometric-4 {
+    right: 150px;
+    top: 200px;
+  }
+  .isometric-5 {
+    right: 150px;
+    top: 100px;
+  }
+  .isometric-6 {
+    right: 150px;
+    top: 300px;
+    z-index: 6;
+  }
+}

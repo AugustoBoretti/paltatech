@@ -60,7 +60,6 @@ class ColorNavbar extends React.Component {
 
   render() {
     return (
-      <>
         <Navbar className="fixed-top navbar-transparent" expand="lg">
           <Container>
             <div className="navbar-translate">
@@ -84,7 +83,6 @@ class ColorNavbar extends React.Component {
             </div>
           </Container>
         </Navbar>
-      </>
     );
   }
 }

@@ -25,12 +25,15 @@ import WhyPalta from "./IndexSection/WhyPalta";
 import OurServices from "./IndexSection/OurServices";
 import BackedBy from "./IndexSection/BackedBy";
 import OurWorks from "./IndexSection/OurWorks";
+import { Navbar } from "reactstrap";
+import Sidebar from "../customComponents/Sidebar/Sidebar";
 
 const Wrapper = React.createRef();
+const IndexRef = React.createRef();
 const WhyPaltaRef = React.createRef();
-const TheTeamRef = React.createRef();
-const OurTechnologiesRef = React.createRef();
-const WhatTheySayRef = React.createRef();
+const BackedByRef = React.createRef();
+const OurServicesRef = React.createRef();
+const OurWorksRef = React.createRef();
 const GetInTouchRef = React.createRef();
 
 export default class Index extends React.Component {
@@ -46,23 +49,26 @@ export default class Index extends React.Component {
   }
 
   render() {
+    const references = [
+      IndexRef,
+      OurServicesRef,
+      WhyPaltaRef,
+      BackedByRef,
+      OurWorksRef,
+      GetInTouchRef,
+    ];
+
     return (
       <div>
-        <ColorNavbar
-          references={[
-            WhyPaltaRef,
-            TheTeamRef,
-            OurTechnologiesRef,
-            WhatTheySayRef,
-          ]}
-        />
+        <ColorNavbar references={references} />
+        <Sidebar references={references} />
         <div className="wrapper" ref={Wrapper}>
-          <IndexHeader whyPaltaRef={WhyPaltaRef} />
+          <IndexHeader setRef={IndexRef} nextSection={OurServicesRef} />
           <div className="main">
-            <OurServices />
+            <OurServices setRef={OurServicesRef} />
             <WhyPalta setRef={WhyPaltaRef} />
-            <BackedBy />
-            <OurWorks />
+            <BackedBy setRef={BackedByRef} />
+            <OurWorks setRef={OurWorksRef} />
             <GetInTouch setRef={GetInTouchRef} />
           </div>
           <DemoFooter />

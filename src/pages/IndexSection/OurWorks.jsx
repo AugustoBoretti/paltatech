@@ -3,7 +3,7 @@ import { Container } from "reactstrap";
 import IsometricGrid, { Cell } from "react-isometric-grid";
 import dynamics from "dynamics.js";
 
-const OurWorks = () => {
+const OurWorks = ({ setRef }) => {
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
@@ -12,6 +12,7 @@ const OurWorks = () => {
     <div
       className="section features-7"
       style={{ minHeight: "100vh", marginTop: "125px" }}
+      ref={setRef}
     >
       <Container>
         <IsometricGrid

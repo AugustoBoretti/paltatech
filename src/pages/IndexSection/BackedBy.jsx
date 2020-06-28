@@ -1,11 +1,12 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 
-const BackedBy = () => {
+const BackedBy = ({ setRef }) => {
   return (
     <div
       className="section section-components"
       data-background-color="dark-blue"
+      ref={setRef}
     >
       <Container>
         <Row>

@@ -2,9 +2,9 @@ import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
 
-const OurServices = () => {
+const OurServices = ({ setRef }) => {
   return (
-    <div className="section features-7">
+    <div className="section features-7" ref={setRef}>
       <Container>
         <Row>
           <Col className="ml-auto mr-auto" md="12">
@@ -52,7 +52,7 @@ const OurServices = () => {
             <div className="image-container">
               <img
                 alt="..."
-                src={require("assets/img/white-line-avocado.png")}
+                src={require("assets/img/branding-image.png")}
                 style={{ maxHeight: "40vh" }}
               />
             </div>

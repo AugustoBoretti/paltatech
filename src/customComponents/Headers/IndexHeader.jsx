@@ -42,9 +42,10 @@ class Index extends React.Component {
   };
 
   render() {
+    const { setRef, nextSection } = this.props;
+
     return (
-      <>
-        <div className="page-header">
+        <div className="page-header" ref={setRef}>
           <div className={`squares-green square1`} />
           <div className={`squares-green square2`} />
           <div className={`squares-green square3`} />
@@ -66,7 +67,6 @@ class Index extends React.Component {
               </div>
               <div className="mt-5">
                 <MovingText>
-                  <div>A software factory with focus</div>
                   <div>
                     A software factory focused on bringing web solutions to
                     deeptech startups
@@ -78,7 +78,7 @@ class Index extends React.Component {
                   size="lg"
                   target="_blank"
                   onClick={() =>
-                    this.scrollIntoView(this.props.whyPaltaRef.current, 50)
+                    this.scrollIntoView(this.props.nextSection.current, 50)
                   }
                 >
                   <i className="tim-icons icon-minimal-down" />
@@ -87,7 +87,6 @@ class Index extends React.Component {
             </div>
           </Container>
         </div>
-      </>
     );
   }
 }

@@ -5,7 +5,7 @@ import Zoom from "react-reveal/Zoom";
 const BackedBy = ({ setRef }) => {
   return (
     <div
-      className="section section-components"
+      className="section section-basic"
       data-background-color="dark-blue"
       style={{
         backgroundImage:
@@ -39,7 +39,11 @@ const BackedBy = ({ setRef }) => {
           <Col xs="12" sm="3">
             <div className="perspective_image first">
               <div className="image">
-                <a href="https://aws.amazon.com/" target="_blank">
+                <a
+                  href="https://aws.amazon.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className="front">
                     <img
                       alt="..."
@@ -53,7 +57,11 @@ const BackedBy = ({ setRef }) => {
           <Col xs="12" sm="3">
             <div className="perspective_image second">
               <div className="image">
-                <a href="https://trello.com/" target="_blank">
+                <a
+                  href="https://trello.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className="front">
                     <img
                       alt="..."
@@ -67,7 +75,11 @@ const BackedBy = ({ setRef }) => {
           <Col xs="12" sm="3">
             <div className="perspective_image third">
               <div className="image">
-                <a href="https://gsuite.google.com/" target="_blank">
+                <a
+                  href="https://gsuite.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className="front">
                     <img
                       alt="..."
@@ -81,7 +93,11 @@ const BackedBy = ({ setRef }) => {
           <Col xs="12" sm="3">
             <div className="perspective_image fourth">
               <div className="image">
-                <a href="https://auth0.com/" target="_blank">
+                <a
+                  href="https://auth0.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <div className="front">
                     <img
                       alt="..."

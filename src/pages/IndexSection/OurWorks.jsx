@@ -41,7 +41,7 @@ const OurWorks = ({ setRef }) => {
             {images.map((image, k) => (
               <div key={k} className={`isometric-${k + 1}`}>
                 {new Array(4).fill(null).map((index, key) => (
-                  <img key={key} src={image} />
+                  <img key={key} src={image} alt="..." />
                 ))}
               </div>
             ))}

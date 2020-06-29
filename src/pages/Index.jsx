@@ -18,14 +18,12 @@ import React from "react";
 // core components
 import ColorNavbar from "customComponents/Navbars/ColorNavbar.jsx";
 import IndexHeader from "customComponents/Headers/IndexHeader.jsx";
-import DemoFooter from "customComponents/Footers/DemoFooter.jsx";
 // Sections for this page
 import GetInTouch from "./IndexSection/GetInTouch";
 import WhyPalta from "./IndexSection/WhyPalta";
 import OurServices from "./IndexSection/OurServices";
 import BackedBy from "./IndexSection/BackedBy";
 import OurWorks from "./IndexSection/OurWorks";
-import { Navbar } from "reactstrap";
 import Sidebar from "../customComponents/Sidebar/Sidebar";
 
 const Wrapper = React.createRef();
@@ -36,43 +34,38 @@ const OurServicesRef = React.createRef();
 const OurWorksRef = React.createRef();
 const GetInTouchRef = React.createRef();
 
-export default class Index extends React.Component {
-  componentDidMount() {
-    document.body.classList.add("index-page");
+const Index = () => {
+  const references = [
+    IndexRef,
+    OurServicesRef,
+    WhyPaltaRef,
+    BackedByRef,
+    OurWorksRef,
+    GetInTouchRef,
+  ];
+
+  React.useEffect(() => {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     if (Wrapper && Wrapper.current) Wrapper.current.scrollTop = 0;
-  }
+  }, []);
 
-  componentWillUnmount() {
-    document.body.classList.remove("index-page");
-  }
-
-  render() {
-    const references = [
-      IndexRef,
-      OurServicesRef,
-      WhyPaltaRef,
-      BackedByRef,
-      OurWorksRef,
-      GetInTouchRef,
-    ];
-
-    return (
-      <div>
-        <ColorNavbar references={references} />
-        <Sidebar references={references} />
-        <div className="wrapper" ref={Wrapper}>
-          <IndexHeader setRef={IndexRef} nextSection={OurServicesRef} />
-          <div className="main">
-            <OurServices setRef={OurServicesRef} />
-            <WhyPalta setRef={WhyPaltaRef} />
-            <BackedBy setRef={BackedByRef} />
-            <OurWorks setRef={OurWorksRef} />
-            <GetInTouch setRef={GetInTouchRef} />
-          </div>
+  return (
+    <div>
+      <ColorNavbar references={references} firstRef={OurServicesRef} />
+      <Sidebar references={references} />
+      <div className="wrapper" ref={Wrapper}>
+        <IndexHeader setRef={IndexRef} nextSection={OurServicesRef} />
+        <div className="main">
+          <OurServices setRef={OurServicesRef} />
+          <WhyPalta setRef={WhyPaltaRef} />
+          <BackedBy setRef={BackedByRef} />
+          <OurWorks setRef={OurWorksRef} />
+          <GetInTouch setRef={GetInTouchRef} />
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default Index;

@@ -41,7 +41,7 @@ import Zoom from "react-reveal/Zoom";
 const GetInTouch = ({ setRef }) => {
   return (
     <div
-      className="section"
+      className="section section-basic"
       id="getInTouch"
       ref={setRef}
       style={{

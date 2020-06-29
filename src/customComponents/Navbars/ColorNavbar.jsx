@@ -1,66 +1,36 @@
-/*!
-
-=========================================================
-* BLK Design System PRO React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/blk-design-system-pro-react
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
-  Button,
-  UncontrolledCollapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  NavbarBrand,
-  Navbar,
-  NavItem,
-  Nav,
   Container,
-  Row,
-  Col,
+  Navbar,
+  NavbarBrand,
   UncontrolledTooltip,
 } from "reactstrap";
-import AvocadoPolygon from "../../components/Polygons/AvocadoPolygon";
 
-class ColorNavbar extends React.Component {
-  componentDidMount() {
-    window.addEventListener("scroll", this.changeNavbarColor);
-  }
+const ColorNavbar = ({ firstRef }) => {
+  const [render, setRender] = React.useState(0);
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.changeNavbarColor);
-  }
-
-  turnOnSection = (Section, color) => {
-    if (!Section) return;
-
-    const { top, height } = Section.getBoundingClientRect();
-    return (top <= 65 && top >= (height - 65) * -1 && `text-${color}`) || "";
+  const getNavbarClass = () => {
+    return firstRef.current && firstRef.current.getBoundingClientRect().top < 50
+      ? "background-blur"
+      : "";
   };
 
-  scrollIntoView = (Section, extraTop = 0) => {
-    window.scrollTo({
-      behavior: "smooth",
-      top: Section.getBoundingClientRect().top + window.pageYOffset - extraTop,
-    });
-  };
+  React.useEffect(() => {
+    const handleScroll = () => setRender(Math.random());
 
-  render() {
-    return (
-      <Navbar className="fixed-top navbar-transparent" expand="lg">
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [render]);
+
+  return (
+    <>
+      <Navbar
+        className={`fixed-top navbar-transparent ${getNavbarClass()}`}
+        expand="lg"
+      >
         <Container>
           <div className="navbar-translate">
             <NavbarBrand to="/" tag={Link} id="brand">
@@ -78,8 +48,26 @@ class ColorNavbar extends React.Component {
           </div>
         </Container>
       </Navbar>
-    );
-  }
-}
+      <Navbar className="fixed-top navbar-transparent filter-blur" expand="lg">
+        <Container>
+          <div className="navbar-translate">
+            <NavbarBrand to="/" tag={Link} id="brand">
+              <img
+                src={require("assets/img/white-line-avocado.png")}
+                alt="..."
+                height="40px"
+              />
+              <span className="ml-2">PALTA •</span> TECH
+            </NavbarBrand>
+            <UncontrolledTooltip delay={0} target="brand">
+              Designed and coded with ❤️ by Palta{" "}
+              <span className="text-success">Tech</span>
+            </UncontrolledTooltip>
+          </div>
+        </Container>
+      </Navbar>
+    </>
+  );
+};
 
 export default ColorNavbar;

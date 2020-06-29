@@ -7,7 +7,7 @@ const OurServices = ({ setRef }) => {
 
   return (
     <div
-      className="section features-7"
+      className="section section-basic"
       ref={setRef}
       style={{
         backgroundImage:
@@ -60,18 +60,21 @@ const OurServices = ({ setRef }) => {
         </Row>
         <div style={{ position: "absolute", top: "30%" }}>
           <img
+            alt="..."
             src="https://awv3node-homepage.surge.sh/build/assets/cloud.svg"
             style={{ opacity: 0.05, width: "60%" }}
           />
         </div>
         <div style={{ position: "absolute", bottom: "10%", left: "40%" }}>
           <img
+            alt="..."
             src="https://awv3node-homepage.surge.sh/build/assets/cloud.svg"
             style={{ opacity: 0.05, width: "30%" }}
           />
         </div>
         <div style={{ position: "absolute", right: "10%" }}>
           <img
+            alt="..."
             src="https://awv3node-homepage.surge.sh/build/assets/cloud.svg"
             style={{ opacity: 0.05 }}
           />

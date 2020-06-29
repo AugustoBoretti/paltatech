@@ -15,12 +15,9 @@
 
 */
 import React from "react";
-
 // reactstrap components
-import { Container, Row, Col } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
-import Slide from "react-reveal/Slide";
-import Info from "../../oldViews/PresentationSections/Info";
 
 const WhyPalta = ({ setRef }) => {
   return (

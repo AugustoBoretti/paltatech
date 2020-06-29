@@ -22,12 +22,17 @@ import { Button, Container } from "reactstrap";
 import MovingText from "../Text/MovingText";
 
 const Index = ({ setRef, nextSection }) => {
+  const [endOfTyping, setEndOfTyping] = React.useState(false);
   const scrollIntoView = (Section, extraTop = 0) => {
     window.scrollTo({
       behavior: "smooth",
       top: Section.getBoundingClientRect().top + window.pageYOffset - extraTop,
     });
   };
+
+  setTimeout(() => {
+    setEndOfTyping(true);
+  }, 5000);
 
   return (
     <div
@@ -48,7 +53,25 @@ const Index = ({ setRef, nextSection }) => {
       <Container>
         <div className="content-center brand">
           <div>
-            <img src={require("assets/img/white-line-avocado.png")} alt="..." />
+            {endOfTyping ? (
+              <>
+                <img
+                  src={require("assets/img/white-line-avocado.png")}
+                  alt="..."
+                  style={{ position: "absolute" }}
+                />
+                <img
+                  src={require("assets/img/white-line-avocado.png")}
+                  alt="..."
+                  className="filter-blur"
+                />
+              </>
+            ) : (
+              <img
+                src={require("assets/img/white-line-avocado.png")}
+                alt="..."
+              />
+            )}
             <h3 className="rez-text mt-3">
               <span className="text-success fs-85 fw-100">palta</span>
               <span className="text-white fs-85 fw-100">tech</span>

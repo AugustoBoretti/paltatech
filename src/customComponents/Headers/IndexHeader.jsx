@@ -33,6 +33,30 @@ const Index = ({ setRef, nextSection }) => {
   React.useEffect(() => {
     setTimeout(() => {
       setEndOfTyping(true);
+    }, 1500);
+    setTimeout(() => {
+      setEndOfTyping(false);
+    }, 1700);
+    setTimeout(() => {
+      setEndOfTyping(true);
+    }, 2000);
+    setTimeout(() => {
+      setEndOfTyping(false);
+    }, 2100);
+    setTimeout(() => {
+      setEndOfTyping(true);
+    }, 2800);
+    setTimeout(() => {
+      setEndOfTyping(false);
+    }, 2900);
+    setTimeout(() => {
+      setEndOfTyping(true);
+    }, 3700);
+    setTimeout(() => {
+      setEndOfTyping(false);
+    }, 3900);
+    setTimeout(() => {
+      setEndOfTyping(true);
       setTimeout(
         () => window.scrollY < 50 && scrollIntoView(nextSection.current, 50),
         1000

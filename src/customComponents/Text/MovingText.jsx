@@ -18,7 +18,7 @@ const MovingText = ({ children }) => {
   return (
     <div>
       <span id="text-static">{children}</span>
-      <h2 id="static" />
+      <h2 id="static" style={{ minHeight: "85px" }} />
     </div>
   );
 };

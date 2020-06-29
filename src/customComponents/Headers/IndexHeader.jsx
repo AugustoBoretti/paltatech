@@ -30,9 +30,15 @@ const Index = ({ setRef, nextSection }) => {
     });
   };
 
-  setTimeout(() => {
-    setEndOfTyping(true);
-  }, 5000);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setEndOfTyping(true);
+      setTimeout(
+        () => window.scrollY < 50 && scrollIntoView(nextSection.current, 50),
+        500
+      );
+    }, 5000);
+  }, []);
 
   return (
     <div

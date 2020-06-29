@@ -28,6 +28,7 @@ const WhyPalta = ({ setRef }) => {
         backgroundImage:
           "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
       }}
+      aria-valuetext="Why Palta?"
     >
       <img alt="..." className="path" src={require("assets/img/path1.png")} />
       <Container>

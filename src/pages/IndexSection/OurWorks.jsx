@@ -20,6 +20,7 @@ const OurWorks = ({ setRef }) => {
         backgroundImage:
           "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
       }}
+      aria-valuetext="Our works"
     >
       <Container>
         <Row>

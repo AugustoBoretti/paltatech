@@ -48,6 +48,7 @@ const GetInTouch = ({ setRef }) => {
         backgroundImage:
           "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
       }}
+      aria-valuetext="Get in touch"
     >
       <Container>
         <Row>

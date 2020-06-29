@@ -35,7 +35,7 @@ const Index = ({ setRef, nextSection }) => {
       setEndOfTyping(true);
       setTimeout(
         () => window.scrollY < 50 && scrollIntoView(nextSection.current, 50),
-        500
+        1000
       );
     }, 5000);
   }, []);
@@ -48,6 +48,7 @@ const Index = ({ setRef, nextSection }) => {
         backgroundImage:
           "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
       }}
+      aria-valuetext=""
     >
       <div className={`squares-green square1`} />
       <div className={`squares-green square2`} />

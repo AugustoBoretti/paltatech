@@ -52,7 +52,7 @@ const Index = () => {
 
   return (
     <div>
-      <ColorNavbar references={references} firstRef={OurServicesRef} />
+      <ColorNavbar firstRef={OurServicesRef} />
       <Sidebar references={references} />
       <div className="wrapper" ref={Wrapper}>
         <IndexHeader setRef={IndexRef} nextSection={OurServicesRef} />

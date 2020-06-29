@@ -12,6 +12,7 @@ const BackedBy = ({ setRef }) => {
           "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
       }}
       ref={setRef}
+      aria-valuetext="Backed by the best!"
     >
       <Container>
         <Row>

@@ -1,19 +1,38 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
+import Zoom from "react-reveal/Zoom";
 
 const BackedBy = ({ setRef }) => {
   return (
     <div
       className="section section-components"
       data-background-color="dark-blue"
+      style={{
+        backgroundImage:
+          "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
+      }}
       ref={setRef}
     >
       <Container>
         <Row>
-          <Col xs="12">
-            <div className="rez-text fs-85 text-center text-success">
-              backed by the best
-            </div>
+          <Col className="ml-auto mr-auto" md="12">
+            <h1 className="title">
+              <Zoom left cascade>
+                Backed by
+              </Zoom>
+              <strong className="text-success">
+                <Zoom right cascade>
+                  THE BEST!
+                </Zoom>
+              </strong>
+            </h1>
+            <h4>
+              It is scientifically proven that performing tasks with the correct
+              tools reduces time, costs and increases quality. This is something
+              we take seriously, and it is the reason why we work with leading
+              companies in every need.
+            </h4>
+            <h4>What helps us achieve the highest quality standards?</h4>
           </Col>
         </Row>
         <Row>

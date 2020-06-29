@@ -24,7 +24,7 @@
   .image {
     transform-style: preserve-3d;
     position: relative;
-    height: 500px;
+    height: 375px;
 
     .front {
       backface-visibility: hidden;
@@ -39,6 +39,7 @@
       border-radius: 10px;
       overflow: hidden;
       transition: all .2s;
+      max-height: 335px;
     }
 
     .front:hover {
@@ -104,24 +105,30 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 575px) {
   .perspective_image {
+    margin: 0 auto;
+
     &.first {
-      left: 0;
+      left: unset
     }
     &.second {
-      left: 0;
+      left: unset
     }
     &.third {
-      right: 0;
+      right: unset
     }
     &.fourth {
-      right: 0;
+      right: unset
     }
 
     .image {
       .front {
-        transform: rotateY(0deg);
+        transform: rotateY(0);
+      }
+
+      .front:hover {
+        transform: unset;
       }
     }
   }

@@ -60,29 +60,24 @@ class ColorNavbar extends React.Component {
 
   render() {
     return (
-        <Navbar className="fixed-top navbar-transparent" expand="lg">
-          <Container>
-            <div className="navbar-translate">
-              <NavbarBrand to="/" tag={Link} id="brand">
-                <img
-                  src={require("assets/img/white-line-avocado.png")}
-                  alt="..."
-                  height="40px"
-                />
-                <span className="ml-2">PALTA •</span> TECH
-              </NavbarBrand>
-              <UncontrolledTooltip delay={0} target="brand">
-                Designed and coded with ❤️ by Palta{" "}
-                <span className="text-success">Tech</span>
-              </UncontrolledTooltip>
-              <button className="navbar-toggler" id="navigation">
-                <span className="navbar-toggler-bar bar1" />
-                <span className="navbar-toggler-bar bar2" />
-                <span className="navbar-toggler-bar bar3" />
-              </button>
-            </div>
-          </Container>
-        </Navbar>
+      <Navbar className="fixed-top navbar-transparent" expand="lg">
+        <Container>
+          <div className="navbar-translate">
+            <NavbarBrand to="/" tag={Link} id="brand">
+              <img
+                src={require("assets/img/white-line-avocado.png")}
+                alt="..."
+                height="40px"
+              />
+              <span className="ml-2">PALTA •</span> TECH
+            </NavbarBrand>
+            <UncontrolledTooltip delay={0} target="brand">
+              Designed and coded with ❤️ by Palta{" "}
+              <span className="text-success">Tech</span>
+            </UncontrolledTooltip>
+          </div>
+        </Container>
+      </Navbar>
     );
   }
 }

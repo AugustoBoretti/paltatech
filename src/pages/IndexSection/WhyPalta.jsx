@@ -24,7 +24,14 @@ import Info from "../../oldViews/PresentationSections/Info";
 
 const WhyPalta = ({ setRef }) => {
   return (
-    <div className="section section-basic" ref={setRef}>
+    <div
+      className="section section-basic"
+      ref={setRef}
+      style={{
+        backgroundImage:
+          "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
+      }}
+    >
       <img alt="..." className="path" src={require("assets/img/path1.png")} />
       <Container>
         <Row>
@@ -39,7 +46,7 @@ const WhyPalta = ({ setRef }) => {
                 </Zoom>
               </strong>
             </h1>
-            <h3>We hate to brag, but here's some stuff we're awesome at.</h3>
+            <h4>We hate to brag, but here's some stuff we're awesome at.</h4>
           </Col>
         </Row>
         <div className="section-story-overview">
@@ -49,10 +56,9 @@ const WhyPalta = ({ setRef }) => {
                 <div className="icon icon-primary">
                   <img
                     alt="..."
-                    className="bg-blob"
-                    src={require("assets/img/feature-blob/primary.png")}
+                    style={{ width: "56px" }}
+                    src={require("assets/img/business-head.svg")}
                   />
-                  <i className="tim-icons icon-user-run" />
                 </div>
                 <h2 className="info-title">
                   Hearing and understanding your startup needs
@@ -66,13 +72,12 @@ const WhyPalta = ({ setRef }) => {
             </Col>
             <Col md="4">
               <div className="info info-hover" style={{ marginTop: "-50px" }}>
-                <div className="icon icon-warning">
+                <div className="icon icon-primary">
                   <img
                     alt="..."
-                    className="bg-blob"
-                    src={require("assets/img/feature-blob/warning.png")}
+                    style={{ width: "56px" }}
+                    src={require("assets/img/business-partnership.svg")}
                   />
-                  <i className="tim-icons icon-atom" />
                 </div>
                 <h2 className="info-title">Being your partner</h2>
                 <h4 className="description">
@@ -85,12 +90,13 @@ const WhyPalta = ({ setRef }) => {
             <Col md="4">
               <div className="info info-hover">
                 <div className="icon icon-success">
-                  <img
-                    alt="..."
-                    className="bg-blob"
-                    src={require("assets/img/feature-blob/success.png")}
-                  />
-                  <i className="tim-icons icon-gift-2" />
+                  <div className="icon icon-primary">
+                    <img
+                      alt="..."
+                      style={{ width: "56px" }}
+                      src={require("assets/img/business-chart.svg")}
+                    />
+                  </div>
                 </div>
                 <h2 className="info-title">Showing why you are the best!</h2>
                 <p className="description">

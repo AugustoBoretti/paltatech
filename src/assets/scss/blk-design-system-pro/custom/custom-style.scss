@@ -95,6 +95,25 @@
   &-15 { font-size: 15px }
   &-50 { font-size: 50px }
   &-85 { font-size: 85px }
+  &-85-70-50 { font-size: 85px }
+}
+
+@media screen and (max-width: 992px) {
+  .fs {
+    &-85-70-50 { font-size: 70px }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fs {
+    &-85-70-50 { font-size: 50px }
+  }
+}
+
+@media screen and (max-width: 439px) {
+  .fs {
+    &-85-70-50 { font-size: 40px }
+  }
 }
 
 .middle-align {
@@ -151,6 +170,29 @@
       box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
     }
   }
+}
+
+@media (min-width: 576px){
+  .container {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 768px){
+  .container {
+    max-width: 770px;
+  }
+}
+
+@media (min-width: 992px){
+  .container {
+    max-width: 85%;
+  }
+}
+
+.card-transparent {
+  background-color: transparent;
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 @import "isometric";

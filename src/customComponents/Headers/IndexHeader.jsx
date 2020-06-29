@@ -45,48 +45,53 @@ class Index extends React.Component {
     const { setRef, nextSection } = this.props;
 
     return (
-        <div className="page-header" ref={setRef}>
-          <div className={`squares-green square1`} />
-          <div className={`squares-green square2`} />
-          <div className={`squares-green square3`} />
-          <div className={`squares-green square4`} />
-          <div className={`squares-green square5`} />
-          <div className={`squares-green square6`} />
-          <div className={`squares-green square7`} />
-          <Container>
-            <div className="content-center brand">
-              <div>
-                <img
-                  src={require("assets/img/white-line-avocado.png")}
-                  alt="..."
-                />
-                <h3 className="rez-text mt-3">
-                  <span className="text-success fs-85 fw-100">palta</span>
-                  <span className="text-white fs-85 fw-100">tech</span>
-                </h3>
-              </div>
-              <div className="mt-5">
-                <MovingText>
-                  <div>
-                    A software factory focused on bringing web solutions to
-                    deeptech startups
-                  </div>
-                </MovingText>
-                <Button
-                  className="btn-icon btn-round btn-icon-pulse mt-5"
-                  color="success"
-                  size="lg"
-                  target="_blank"
-                  onClick={() =>
-                    this.scrollIntoView(this.props.nextSection.current, 50)
-                  }
-                >
-                  <i className="tim-icons icon-minimal-down" />
-                </Button>
-              </div>
+      <div
+        className="page-header"
+        ref={setRef}
+        style={{
+          backgroundImage:
+            "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
+        }}
+      >
+        <div className={`squares-green square1`} />
+        <div className={`squares-green square2`} />
+        <div className={`squares-green square3`} />
+        <div className={`squares-green square4`} />
+        <div className={`squares-green square5`} />
+        <div className={`squares-green square6`} />
+        <div className={`squares-green square7`} />
+        <Container>
+          <div className="content-center brand">
+            <div>
+              <img
+                src={require("assets/img/white-line-avocado.png")}
+                alt="..."
+              />
+              <h3 className="rez-text mt-3">
+                <span className="text-success fs-85 fw-100">palta</span>
+                <span className="text-white fs-85 fw-100">tech</span>
+              </h3>
             </div>
-          </Container>
-        </div>
+            <div className="mt-5">
+              <MovingText>
+                <div>
+                  A software factory focused on bringing web solutions to
+                  deeptech startups
+                </div>
+              </MovingText>
+              <Button
+                className="btn-icon btn-round btn-icon-pulse mt-5"
+                color="success"
+                size="lg"
+                target="_blank"
+                onClick={() => this.scrollIntoView(nextSection.current, 50)}
+              >
+                <i className="tim-icons icon-minimal-down" />
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </div>
     );
   }
 }

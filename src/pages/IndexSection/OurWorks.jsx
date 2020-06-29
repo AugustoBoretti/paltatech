@@ -13,7 +13,14 @@ const OurWorks = ({ setRef }) => {
   ];
 
   return (
-    <div className="section section-basic isometric-section" ref={setRef}>
+    <div
+      className="section section-basic isometric-section"
+      ref={setRef}
+      style={{
+        backgroundImage:
+          "url(https://awv3node-homepage.surge.sh/build/assets/stars.svg)",
+      }}
+    >
       <Container>
         <Row>
           <Col className="ml-auto mr-auto" md="12">

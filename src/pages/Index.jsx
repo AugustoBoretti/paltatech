@@ -71,7 +71,6 @@ export default class Index extends React.Component {
             <OurWorks setRef={OurWorksRef} />
             <GetInTouch setRef={GetInTouchRef} />
           </div>
-          <DemoFooter />
         </div>
       </div>
     );

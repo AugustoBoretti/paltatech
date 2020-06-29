@@ -74,13 +74,6 @@ const Index = ({ setRef, nextSection }) => {
       }}
       aria-valuetext=""
     >
-      <div className={`squares-green square1`} />
-      <div className={`squares-green square2`} />
-      <div className={`squares-green square3`} />
-      <div className={`squares-green square4`} />
-      <div className={`squares-green square5`} />
-      <div className={`squares-green square6`} />
-      <div className={`squares-green square7`} />
       <Container>
         <div className="content-center brand">
           <div>

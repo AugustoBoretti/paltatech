@@ -11,12 +11,10 @@ import "assets/demo/react-demo.css";
 
 // Palta Tech Pages
 import Index from "./pages/Index";
-import Michroma from "./pages/Michroma";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/michroma" render={(props) => <Michroma {...props} />} />
       <Route path="/" render={(props) => <Index {...props} />} />
     </Switch>
   </BrowserRouter>,

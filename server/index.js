@@ -5,10 +5,17 @@ const express = require("express");
 const app = express();
 const credentials = require("./private/certification/siteCredentials");
 const emailRoutes = require("./src/routes/emailRoute");
+const michromaRoutes = require("./src/routes/michromaRoute");
 
 // add middlewares
 
 app.use("/static", express.static(path.join(__dirname, "..", "build/static")));
+app.use(
+  "/michroma/static",
+  express.static(path.join(__dirname, "pages/michroma/static"))
+);
+app.use("/michroma", michromaRoutes);
+app.use("/email", emailRoutes);
 app.get("*", function (req, res) {
   res.sendFile("index.html", {
     root: path.join(__dirname, "..", "build"),
@@ -16,8 +23,6 @@ app.get("*", function (req, res) {
 });
 app.use(express.static("public"));
 app.use(express.static(__dirname, { dotfiles: "allow" }));
-
-app.use("/email", emailRoutes);
 
 // Starting both http & https servers
 const httpServer = http.createServer(app);

@@ -58,12 +58,20 @@ const Index = () => {
 
   return (
     <div>
-      <Switch
-        onClick={() => {
-          setSwitchOn(true);
-          setBrightness(null);
+      <div
+        style={{
+          position: "absolute",
+          top: "15vh",
+          left: "calc(50% - 25px)",
         }}
-      />
+      >
+        <Switch
+          onClick={() => {
+            setSwitchOn(true);
+            setBrightness(null);
+          }}
+        />
+      </div>
       <div style={brightness}>
         <ColorNavbar firstRef={OurServicesRef} />
         <Sidebar references={references} />

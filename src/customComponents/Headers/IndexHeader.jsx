@@ -114,7 +114,7 @@ const Index = ({ setRef, nextSection, initializeSystem }) => {
             </h3>
           </div>
           <div className="mt-5">
-            {initializeSystem && (
+            {initializeSystem ? (
               <MovingText>
                 <div>The soft</div>
                 <div>
@@ -122,6 +122,8 @@ const Index = ({ setRef, nextSection, initializeSystem }) => {
                   deeptech startups
                 </div>
               </MovingText>
+            ) : (
+              <div style={{ height: "85px" }} />
             )}
             <Button
               className={`btn-icon btn-round mt-5 ${

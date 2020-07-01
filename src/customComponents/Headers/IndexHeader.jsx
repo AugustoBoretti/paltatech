@@ -43,7 +43,6 @@ const Index = ({ setRef, nextSection }) => {
       setEndOfTyping(true);
     }, 1500);
     setTimeout(() => {
-      play();
       setEndOfTyping(false);
     }, 1700);
     setTimeout(() => {
@@ -51,7 +50,6 @@ const Index = ({ setRef, nextSection }) => {
       setEndOfTyping(true);
     }, 2000);
     setTimeout(() => {
-      play();
       setEndOfTyping(false);
     }, 2100);
     setTimeout(() => {
@@ -59,7 +57,6 @@ const Index = ({ setRef, nextSection }) => {
       setEndOfTyping(true);
     }, 2800);
     setTimeout(() => {
-      play();
       setEndOfTyping(false);
     }, 2900);
     setTimeout(() => {
@@ -67,7 +64,6 @@ const Index = ({ setRef, nextSection }) => {
       setEndOfTyping(true);
     }, 3700);
     setTimeout(() => {
-      play();
       setEndOfTyping(false);
     }, 3900);
     setTimeout(() => {

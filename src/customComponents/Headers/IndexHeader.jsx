@@ -15,7 +15,6 @@
 
 */
 import React from "react";
-
 // reactstrap components
 import { Button, Container } from "reactstrap";
 
@@ -24,7 +23,7 @@ import MovingText from "../Text/MovingText";
 import lightning from "assets/sounds/lightning.mp3";
 import lightningEnd from "assets/sounds/lightning_end.mp3";
 
-const Index = ({ setRef, nextSection }) => {
+const Index = ({ setRef, nextSection, initializeSystem }) => {
   const [endOfTyping, setEndOfTyping] = React.useState(false);
   const lightningSound = new Audio(lightning);
   const lightningEndSound = new Audio(lightningEnd);
@@ -37,6 +36,8 @@ const Index = ({ setRef, nextSection }) => {
   };
 
   React.useEffect(() => {
+    if (!initializeSystem) return;
+
     setTimeout(() => {
       lightningSound.play();
       setEndOfTyping(true);
@@ -73,7 +74,7 @@ const Index = ({ setRef, nextSection }) => {
         3000
       );
     }, 5000);
-  }, []);
+  }, [initializeSystem]);
 
   return (
     <div
@@ -113,15 +114,19 @@ const Index = ({ setRef, nextSection }) => {
             </h3>
           </div>
           <div className="mt-5">
-            <MovingText>
-              <div>The soft</div>
-              <div>
-                A software factory focused on bringing web solutions to deeptech
-                startups
-              </div>
-            </MovingText>
+            {initializeSystem && (
+              <MovingText>
+                <div>The soft</div>
+                <div>
+                  A software factory focused on bringing web solutions to
+                  deeptech startups
+                </div>
+              </MovingText>
+            )}
             <Button
-              className="btn-icon btn-round btn-icon-pulse mt-5"
+              className={`btn-icon btn-round mt-5 ${
+                initializeSystem && "btn-icon-pulse"
+              }`}
               color="success"
               size="lg"
               target="_blank"

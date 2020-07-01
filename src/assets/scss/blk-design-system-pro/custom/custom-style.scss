@@ -82,6 +82,23 @@
   }
 }
 
+.btn-icon-pulse-white {
+  -webkit-animation: shadow-pulse 1.6s ease-out;
+  animation: shadow-pulse 1.6s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  @keyframes shadow-pulse
+  {
+    0% {
+      box-shadow: 0 0 0 0 rgba(171, 186, 170, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+    }
+  }
+}
+
 .rez-text {
   $font-family: 'Rezland Logotype Font', sans-serif !default;
   font-family: $font-family;
@@ -186,5 +203,16 @@
   filter: blur(8px);
 }
 
+.no-scroll {
+  overflow-y: hidden;
+}
+
+.fade-out {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
 @import "isometric";
 @import "perspective_image";
+@import "light-switch";

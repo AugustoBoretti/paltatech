@@ -25,6 +25,7 @@ import OurServices from "./IndexSection/OurServices";
 import BackedBy from "./IndexSection/BackedBy";
 import OurWorks from "./IndexSection/OurWorks";
 import Sidebar from "../customComponents/Sidebar/Sidebar";
+import Switch from "../customComponents/Switch/Switch";
 
 const Wrapper = React.createRef();
 const IndexRef = React.createRef();
@@ -35,6 +36,11 @@ const OurWorksRef = React.createRef();
 const GetInTouchRef = React.createRef();
 
 const Index = () => {
+  const [switchOn, setSwitchOn] = React.useState(false);
+  const [brightness, setBrightness] = React.useState({
+    filter: "brightness(0.3)",
+  });
+
   const references = [
     IndexRef,
     OurServicesRef,
@@ -52,16 +58,28 @@ const Index = () => {
 
   return (
     <div>
-      <ColorNavbar firstRef={OurServicesRef} />
-      <Sidebar references={references} />
-      <div className="wrapper" ref={Wrapper}>
-        <IndexHeader setRef={IndexRef} nextSection={OurServicesRef} />
-        <div className="main">
-          <OurServices setRef={OurServicesRef} />
-          <WhyPalta setRef={WhyPaltaRef} />
-          <BackedBy setRef={BackedByRef} />
-          <OurWorks setRef={OurWorksRef} />
-          <GetInTouch setRef={GetInTouchRef} />
+      <Switch
+        onClick={() => {
+          setSwitchOn(true);
+          setBrightness(null);
+        }}
+      />
+      <div style={brightness}>
+        <ColorNavbar firstRef={OurServicesRef} />
+        <Sidebar references={references} />
+        <div className="wrapper" ref={Wrapper}>
+          <IndexHeader
+            setRef={IndexRef}
+            nextSection={OurServicesRef}
+            initializeSystem={switchOn}
+          />
+          <div className="main">
+            <OurServices setRef={OurServicesRef} />
+            <WhyPalta setRef={WhyPaltaRef} />
+            <BackedBy setRef={BackedByRef} />
+            <OurWorks setRef={OurWorksRef} />
+            <GetInTouch setRef={GetInTouchRef} />
+          </div>
         </div>
       </div>
     </div>

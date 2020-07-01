@@ -15,7 +15,6 @@
 
 */
 import React from "react";
-import useSound from "use-sound";
 
 // reactstrap components
 import { Button, Container } from "reactstrap";
@@ -27,8 +26,8 @@ import lightningEnd from "assets/sounds/lightning_end.mp3";
 
 const Index = ({ setRef, nextSection }) => {
   const [endOfTyping, setEndOfTyping] = React.useState(false);
-  const [play] = useSound(lightning);
-  const [playFinal] = useSound(lightningEnd);
+  const lightningSound = new Audio(lightning);
+  const lightningEndSound = new Audio(lightningEnd);
 
   const scrollIntoView = (Section, extraTop = 0) => {
     window.scrollTo({
@@ -39,42 +38,42 @@ const Index = ({ setRef, nextSection }) => {
 
   React.useEffect(() => {
     setTimeout(() => {
-      play();
+      lightningSound.play();
       setEndOfTyping(true);
     }, 1500);
     setTimeout(() => {
       setEndOfTyping(false);
     }, 1700);
     setTimeout(() => {
-      play();
+      lightningSound.play();
       setEndOfTyping(true);
     }, 2000);
     setTimeout(() => {
       setEndOfTyping(false);
     }, 2100);
     setTimeout(() => {
-      play();
+      lightningSound.play();
       setEndOfTyping(true);
     }, 2800);
     setTimeout(() => {
       setEndOfTyping(false);
     }, 2900);
     setTimeout(() => {
-      play();
+      lightningSound.play();
       setEndOfTyping(true);
     }, 3700);
     setTimeout(() => {
       setEndOfTyping(false);
     }, 3900);
     setTimeout(() => {
-      playFinal();
+      lightningEndSound.play();
       setEndOfTyping(true);
       setTimeout(
         () => window.scrollY < 50 && scrollIntoView(nextSection.current, 50),
         3000
       );
     }, 5000);
-  }, [playFinal]);
+  }, []);
 
   return (
     <div

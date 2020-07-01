@@ -7,9 +7,16 @@ const credentials = require("./private/certification/siteCredentials");
 const emailRoutes = require("./src/routes/emailRoute");
 
 // add middlewares
-app.use(express.static(path.join(__dirname, "..", "build")));
+
+app.use("/static", express.static(path.join(__dirname, "..", "build/static")));
+app.get("*", function (req, res) {
+  res.sendFile("index.html", {
+    root: path.join(__dirname, "..", "build"),
+  });
+});
 app.use(express.static("public"));
 app.use(express.static(__dirname, { dotfiles: "allow" }));
+
 app.use("/email", emailRoutes);
 
 // Starting both http & https servers

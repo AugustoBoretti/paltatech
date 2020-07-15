@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/michroma/press/static/css/main.bcc7f53d.chunk.css",
+    "main.js": "/michroma/press/static/js/main.23b37bbd.chunk.js",
+    "main.js.map": "/michroma/press/static/js/main.23b37bbd.chunk.js.map",
+    "runtime-main.js": "/michroma/press/static/js/runtime-main.e169c776.js",
+    "runtime-main.js.map": "/michroma/press/static/js/runtime-main.e169c776.js.map",
+    "static/js/2.3810a656.chunk.js": "/michroma/press/static/js/2.3810a656.chunk.js",
+    "static/js/2.3810a656.chunk.js.map": "/michroma/press/static/js/2.3810a656.chunk.js.map",
+    "index.html": "/michroma/press/index.html",
+    "precache-manifest.839b03e5f3b0e18ef26852c722457fea.js": "/michroma/press/precache-manifest.839b03e5f3b0e18ef26852c722457fea.js",
+    "service-worker.js": "/michroma/press/service-worker.js",
+    "static/css/main.bcc7f53d.chunk.css.map": "/michroma/press/static/css/main.bcc7f53d.chunk.css.map",
+    "static/js/2.3810a656.chunk.js.LICENSE.txt": "/michroma/press/static/js/2.3810a656.chunk.js.LICENSE.txt",
+    "static/media/bg10.jpg": "/michroma/press/static/media/bg10.463b2448.jpg",
+    "static/media/bg5.jpg": "/michroma/press/static/media/bg5.0b37f7db.jpg",
+    "static/media/blog5.jpg": "/michroma/press/static/media/blog5.ea652077.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e169c776.js",
+    "static/js/2.3810a656.chunk.js",
+    "static/css/main.bcc7f53d.chunk.css",
+    "static/js/main.23b37bbd.chunk.js"
+  ]
+}

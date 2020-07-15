@@ -3,7 +3,7 @@ const http = require("http");
 const https = require("https");
 const express = require("express");
 const app = express();
-const credentials = require("./private/certification/siteCredentials");
+//const credentials = require("./private/certification/siteCredentials");
 const emailRoutes = require("./src/routes/emailRoute");
 const michromaRoutes = require("./src/routes/michromaRoute");
 
@@ -13,6 +13,10 @@ app.use("/static", express.static(path.join(__dirname, "..", "build/static")));
 app.use(
   "/michroma/static",
   express.static(path.join(__dirname, "pages/michroma/static"))
+);
+app.use(
+  "/michroma/press/static",
+  express.static(path.join(__dirname, "pages/michroma/press/static"))
 );
 app.use("/michroma", michromaRoutes);
 app.use("/email", emailRoutes);
@@ -26,12 +30,12 @@ app.use(express.static(__dirname, { dotfiles: "allow" }));
 
 // Starting both http & https servers
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
+//const httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(80, () => {
   console.log("HTTP Server running on port 80 🚀");
 });
 
-httpsServer.listen(443, () => {
+/*httpsServer.listen(443, () => {
   console.log("HTTPS Server running on port 443 🚀");
-});
+});*/

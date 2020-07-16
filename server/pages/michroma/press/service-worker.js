@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/michroma/press/precache-manifest.839b03e5f3b0e18ef26852c722457fea.js"
+  "/michroma/press/precache-manifest.82eb56a78adda5b9ba53d6af617ff65e.js"
 );
 
 self.addEventListener('message', (event) => {

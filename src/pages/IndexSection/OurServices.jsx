@@ -7,15 +7,17 @@ const OurServices = ({ setRef }) => {
   const { innerWidth: windowScreen } = window;
   const whiteFilter = "brightness(0) invert(1)";
   const semiWhiteFilter = "brightness(0.3)";
-  const [reactStyle, setReactStyle] = React.useState(whiteFilter);
-  const [dockerStyle, setDockerStyle] = React.useState(whiteFilter);
-  const [redisStyle, setRedisStyle] = React.useState(whiteFilter);
-  const [nodejsStyle, setNodejsStyle] = React.useState(whiteFilter);
-  const [mongoDBStyle, setMongoDBStyle] = React.useState(whiteFilter);
-  const [PSDStyle, setPSDStyle] = React.useState(semiWhiteFilter);
-  const [IDStyle, setIDStyle] = React.useState(semiWhiteFilter);
-  const [XDStyle, setXDStyle] = React.useState(semiWhiteFilter);
-  const [cinemaStyle, setCinemaStyle] = React.useState(semiWhiteFilter);
+  const [reactFilter, setReactFilter] = React.useState(whiteFilter);
+  const [dockerFilter, setDockerFilter] = React.useState(whiteFilter);
+  const [redisFilter, setRedisFilter] = React.useState(whiteFilter);
+  const [nodejsFilter, setNodejsFilter] = React.useState(whiteFilter);
+  const [mongoDBFilter, setMongoDBFilter] = React.useState(whiteFilter);
+  const [PSDFilter, setPSDFilter] = React.useState(semiWhiteFilter);
+  const [illustratorFilter, setIllustratorFilter] = React.useState(
+    semiWhiteFilter
+  );
+  const [XDFilter, setXDFilter] = React.useState(semiWhiteFilter);
+  const [cinemaFilter, setCinemaFilter] = React.useState(semiWhiteFilter);
 
   return (
     <div
@@ -69,11 +71,11 @@ const OurServices = ({ setRef }) => {
                     <img
                       alt="..."
                       src={require("assets/img/react.png")}
-                      onMouseOver={() => setReactStyle("none")}
-                      onMouseOut={() => setReactStyle(whiteFilter)}
+                      onMouseOver={() => setReactFilter("none")}
+                      onMouseOut={() => setReactFilter(whiteFilter)}
                       style={{
                         cursor: "pointer",
-                        filter: reactStyle,
+                        filter: reactFilter,
                       }}
                     />
                   </Col>
@@ -81,11 +83,11 @@ const OurServices = ({ setRef }) => {
                     <img
                       alt="..."
                       src={require("assets/img/docker.png")}
-                      onMouseOver={() => setDockerStyle("none")}
-                      onMouseOut={() => setDockerStyle(whiteFilter)}
+                      onMouseOver={() => setDockerFilter("none")}
+                      onMouseOut={() => setDockerFilter(whiteFilter)}
                       style={{
                         cursor: "pointer",
-                        filter: dockerStyle,
+                        filter: dockerFilter,
                       }}
                     />
                   </Col>
@@ -93,11 +95,11 @@ const OurServices = ({ setRef }) => {
                     <img
                       alt="..."
                       src={require("assets/img/redis.png")}
-                      onMouseOver={() => setRedisStyle("none")}
-                      onMouseOut={() => setRedisStyle(whiteFilter)}
+                      onMouseOver={() => setRedisFilter("none")}
+                      onMouseOut={() => setRedisFilter(whiteFilter)}
                       style={{
                         cursor: "pointer",
-                        filter: redisStyle,
+                        filter: redisFilter,
                       }}
                     />
                   </Col>
@@ -106,11 +108,11 @@ const OurServices = ({ setRef }) => {
                     <img
                       alt="..."
                       src={require("assets/img/nodejs.png")}
-                      onMouseOver={() => setNodejsStyle("none")}
-                      onMouseOut={() => setNodejsStyle(whiteFilter)}
+                      onMouseOver={() => setNodejsFilter("none")}
+                      onMouseOut={() => setNodejsFilter(whiteFilter)}
                       style={{
                         cursor: "pointer",
-                        filter: nodejsStyle,
+                        filter: nodejsFilter,
                       }}
                     />
                   </Col>
@@ -118,11 +120,11 @@ const OurServices = ({ setRef }) => {
                     <img
                       alt="..."
                       src={require("assets/img/mongodb.png")}
-                      onMouseOver={() => setMongoDBStyle("none")}
-                      onMouseOut={() => setMongoDBStyle(whiteFilter)}
+                      onMouseOver={() => setMongoDBFilter("none")}
+                      onMouseOut={() => setMongoDBFilter(whiteFilter)}
                       style={{
                         cursor: "pointer",
-                        filter: mongoDBStyle,
+                        filter: mongoDBFilter,
                       }}
                     />
                   </Col>
@@ -192,23 +194,23 @@ const OurServices = ({ setRef }) => {
                       <img
                         alt="..."
                         src={require("assets/img/psd.png")}
-                        onMouseOver={() => setPSDStyle("none")}
-                        onMouseOut={() => setPSDStyle(semiWhiteFilter)}
+                        onMouseOver={() => setPSDFilter("none")}
+                        onMouseOut={() => setPSDFilter(semiWhiteFilter)}
                         style={{
                           cursor: "pointer",
-                          filter: PSDStyle,
+                          filter: PSDFilter,
                         }}
                       />
                     </Col>
                     <Col className="zIndex2" xs="3">
                       <img
                         alt="..."
-                        src={require("assets/img/id.png")}
-                        onMouseOver={() => setIDStyle("none")}
-                        onMouseOut={() => setIDStyle(semiWhiteFilter)}
+                        src={require("assets/img/illustrator.png")}
+                        onMouseOver={() => setIllustratorFilter("none")}
+                        onMouseOut={() => setIllustratorFilter(semiWhiteFilter)}
                         style={{
                           cursor: "pointer",
-                          filter: IDStyle,
+                          filter: illustratorFilter,
                         }}
                       />
                     </Col>
@@ -216,11 +218,11 @@ const OurServices = ({ setRef }) => {
                       <img
                         alt="..."
                         src={require("assets/img/xd.png")}
-                        onMouseOver={() => setXDStyle("none")}
-                        onMouseOut={() => setXDStyle(semiWhiteFilter)}
+                        onMouseOver={() => setXDFilter("none")}
+                        onMouseOut={() => setXDFilter(semiWhiteFilter)}
                         style={{
                           cursor: "pointer",
-                          filter: XDStyle,
+                          filter: XDFilter,
                         }}
                       />
                     </Col>
@@ -228,11 +230,11 @@ const OurServices = ({ setRef }) => {
                       <img
                         alt="..."
                         src={require("assets/img/cinema.png")}
-                        onMouseOver={() => setCinemaStyle("none")}
-                        onMouseOut={() => setCinemaStyle(semiWhiteFilter)}
+                        onMouseOver={() => setCinemaFilter("none")}
+                        onMouseOut={() => setCinemaFilter(semiWhiteFilter)}
                         style={{
                           cursor: "pointer",
-                          filter: cinemaStyle,
+                          filter: cinemaFilter,
                         }}
                       />
                     </Col>
@@ -260,23 +262,23 @@ const OurServices = ({ setRef }) => {
                       <img
                         alt="..."
                         src={require("assets/img/psd.png")}
-                        onMouseOver={() => setPSDStyle("none")}
-                        onMouseOut={() => setPSDStyle(semiWhiteFilter)}
+                        onMouseOver={() => setPSDFilter("none")}
+                        onMouseOut={() => setPSDFilter(semiWhiteFilter)}
                         style={{
                           cursor: "pointer",
-                          filter: PSDStyle,
+                          filter: PSDFilter,
                         }}
                       />
                     </Col>
                     <Col className="zIndex2" xs="3">
                       <img
                         alt="..."
-                        src={require("assets/img/id.png")}
-                        onMouseOver={() => setIDStyle("none")}
-                        onMouseOut={() => setIDStyle(semiWhiteFilter)}
+                        src={require("assets/img/illustrator.png")}
+                        onMouseOver={() => setIllustratorFilter("none")}
+                        onMouseOut={() => setIllustratorFilter(semiWhiteFilter)}
                         style={{
                           cursor: "pointer",
-                          filter: IDStyle,
+                          filter: illustratorFilter,
                         }}
                       />
                     </Col>
@@ -284,11 +286,11 @@ const OurServices = ({ setRef }) => {
                       <img
                         alt="..."
                         src={require("assets/img/xd.png")}
-                        onMouseOver={() => setXDStyle("none")}
-                        onMouseOut={() => setXDStyle(semiWhiteFilter)}
+                        onMouseOver={() => setXDFilter("none")}
+                        onMouseOut={() => setXDFilter(semiWhiteFilter)}
                         style={{
                           cursor: "pointer",
-                          filter: XDStyle,
+                          filter: XDFilter,
                         }}
                       />
                     </Col>
@@ -296,11 +298,11 @@ const OurServices = ({ setRef }) => {
                       <img
                         alt="..."
                         src={require("assets/img/cinema.png")}
-                        onMouseOver={() => setCinemaStyle("none")}
-                        onMouseOut={() => setCinemaStyle(semiWhiteFilter)}
+                        onMouseOver={() => setCinemaFilter("none")}
+                        onMouseOut={() => setCinemaFilter(semiWhiteFilter)}
                         style={{
                           cursor: "pointer",
-                          filter: cinemaStyle,
+                          filter: cinemaFilter,
                         }}
                       />
                     </Col>

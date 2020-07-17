@@ -91,7 +91,7 @@ const OurServices = ({ setRef }) => {
                       }}
                     />
                   </Col>
-                  <Col xs="4">
+                  <Col className="zIndex2" xs="4">
                     <img
                       alt="..."
                       src={require("assets/img/redis.png")}
@@ -104,7 +104,7 @@ const OurServices = ({ setRef }) => {
                     />
                   </Col>
                   <Col xs="2" />
-                  <Col xs="4" className="mt-5">
+                  <Col className="zIndex2" xs="4" className="mt-5">
                     <img
                       alt="..."
                       src={require("assets/img/nodejs.png")}
@@ -116,7 +116,7 @@ const OurServices = ({ setRef }) => {
                       }}
                     />
                   </Col>
-                  <Col xs="4" className="mt-5">
+                  <Col className="zIndex2" xs="4" className="mt-5">
                     <img
                       alt="..."
                       src={require("assets/img/mongodb.png")}

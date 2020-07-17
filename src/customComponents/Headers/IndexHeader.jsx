@@ -63,10 +63,10 @@ const Index = ({ setRef, nextSection }) => {
           </div>
           <div className="mt-5">
             <MovingText>
-              <div>The soft</div>
+              <div>A soft</div>
               <div>
-                A software factory focused on bringing web solutions to deeptech
-                startups
+                The software company focused on bring web solutions to deeptech
+                startups!
               </div>
             </MovingText>
             <Button

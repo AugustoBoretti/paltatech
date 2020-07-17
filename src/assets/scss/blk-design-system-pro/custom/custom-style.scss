@@ -213,6 +213,10 @@
   transition: visibility 0s 2s, opacity 2s linear;
 }
 
+.zIndex2 {
+  z-index: 2;
+}
+
 @import "isometric";
 @import "perspective_image";
 @import "light-switch";

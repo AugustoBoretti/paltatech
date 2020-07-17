@@ -23,58 +23,13 @@ import MovingText from "../Text/MovingText";
 import lightning from "assets/sounds/lightning.mp3";
 import lightningEnd from "assets/sounds/lightning_end.mp3";
 
-const Index = ({ setRef, nextSection, initializeSystem }) => {
-  const [endOfTyping, setEndOfTyping] = React.useState(false);
-  const lightningSound = new Audio(lightning);
-  const lightningEndSound = new Audio(lightningEnd);
-
+const Index = ({ setRef, nextSection }) => {
   const scrollIntoView = (Section, extraTop = 0) => {
     window.scrollTo({
       behavior: "smooth",
       top: Section.getBoundingClientRect().top + window.pageYOffset - extraTop,
     });
   };
-
-  React.useEffect(() => {
-    if (!initializeSystem) return;
-
-    setTimeout(() => {
-      lightningSound.play();
-      setEndOfTyping(true);
-    }, 1500);
-    setTimeout(() => {
-      setEndOfTyping(false);
-    }, 1700);
-    setTimeout(() => {
-      lightningSound.play();
-      setEndOfTyping(true);
-    }, 2000);
-    setTimeout(() => {
-      setEndOfTyping(false);
-    }, 2100);
-    setTimeout(() => {
-      lightningSound.play();
-      setEndOfTyping(true);
-    }, 2800);
-    setTimeout(() => {
-      setEndOfTyping(false);
-    }, 2900);
-    setTimeout(() => {
-      lightningSound.play();
-      setEndOfTyping(true);
-    }, 3700);
-    setTimeout(() => {
-      setEndOfTyping(false);
-    }, 3900);
-    setTimeout(() => {
-      lightningEndSound.play();
-      setEndOfTyping(true);
-      setTimeout(
-        () => window.scrollY < 50 && scrollIntoView(nextSection.current, 50),
-        3000
-      );
-    }, 5000);
-  }, [initializeSystem]);
 
   return (
     <div
@@ -89,46 +44,33 @@ const Index = ({ setRef, nextSection, initializeSystem }) => {
       <Container>
         <div className="content-center brand">
           <div>
-            {endOfTyping ? (
-              <>
-                <img
-                  src={require("assets/img/white-line-avocado.png")}
-                  alt="..."
-                  style={{ position: "absolute" }}
-                />
-                <img
-                  src={require("assets/img/white-line-avocado.png")}
-                  alt="..."
-                  className="filter-blur"
-                />
-              </>
-            ) : (
+            <>
               <img
                 src={require("assets/img/white-line-avocado.png")}
                 alt="..."
+                style={{ position: "absolute" }}
               />
-            )}
+              <img
+                src={require("assets/img/white-line-avocado.png")}
+                alt="..."
+                className="filter-blur"
+              />
+            </>
             <h3 className="rez-text mt-3">
               <span className="text-success fs-85 fw-100">palta</span>
               <span className="text-white fs-85 fw-100">tech</span>
             </h3>
           </div>
           <div className="mt-5">
-            {initializeSystem ? (
-              <MovingText>
-                <div>The soft</div>
-                <div>
-                  A software factory focused on bringing web solutions to
-                  deeptech startups
-                </div>
-              </MovingText>
-            ) : (
-              <div style={{ height: "85px" }} />
-            )}
+            <MovingText>
+              <div>The soft</div>
+              <div>
+                A software factory focused on bringing web solutions to deeptech
+                startups
+              </div>
+            </MovingText>
             <Button
-              className={`btn-icon btn-round mt-5 ${
-                initializeSystem && "btn-icon-pulse"
-              }`}
+              className="btn-icon btn-round mt-5 btn-icon-pulse"
               color="success"
               size="lg"
               target="_blank"

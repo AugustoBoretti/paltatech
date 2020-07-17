@@ -11,12 +11,6 @@ import {
 const ColorNavbar = ({ firstRef }) => {
   const [render, setRender] = React.useState(0);
 
-  const getNavbarClass = () => {
-    return firstRef.current && firstRef.current.getBoundingClientRect().top < 50
-      ? "background-blur"
-      : "";
-  };
-
   React.useEffect(() => {
     const handleScroll = () => setRender(Math.random());
 
@@ -24,6 +18,12 @@ const ColorNavbar = ({ firstRef }) => {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [render]);
+
+  const getNavbarClass = () => {
+    return firstRef.current && firstRef.current.getBoundingClientRect().top < 50
+      ? "background-blur"
+      : "";
+  };
 
   return (
     <>

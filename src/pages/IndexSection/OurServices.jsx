@@ -3,6 +3,8 @@ import { Col, Container, Row } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
 import { red } from "@material-ui/core/colors";
 
+const brandingTechsRef = React.createRef();
+
 const OurServices = ({ setRef }) => {
   const { innerWidth: windowScreen } = window;
   const whiteFilter = "brightness(0) invert(1)";
@@ -18,6 +20,47 @@ const OurServices = ({ setRef }) => {
   );
   const [XDFilter, setXDFilter] = React.useState(semiWhiteFilter);
   const [cinemaFilter, setCinemaFilter] = React.useState(semiWhiteFilter);
+  const [brandingShowedEffect, setBrandingShowedEffect] = React.useState(false);
+  const [render, setRender] = React.useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setRender(Math.random());
+
+      if (brandingTechsRef.current) {
+        const elementHeight = brandingTechsRef.current.getBoundingClientRect()
+          .height;
+        const positionFromTop = brandingTechsRef.current.getBoundingClientRect()
+          .top;
+        const windowHeight = window.innerHeight;
+
+        if (
+          positionFromTop < windowHeight - elementHeight - 100 &&
+          !brandingShowedEffect
+        ) {
+          setBrandingShowedEffect(true);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [render]);
+
+  // Animation starts!
+  React.useEffect(() => {
+    if (brandingShowedEffect) {
+      setPSDFilter("none");
+      setTimeout(() => setPSDFilter(semiWhiteFilter), 400);
+      setTimeout(() => setIllustratorFilter("none"), 400);
+      setTimeout(() => setIllustratorFilter(semiWhiteFilter), 800);
+      setTimeout(() => setXDFilter("none"), 800);
+      setTimeout(() => setXDFilter(semiWhiteFilter), 1200);
+      setTimeout(() => setCinemaFilter("none"), 1200);
+      setTimeout(() => setCinemaFilter(semiWhiteFilter), 1600);
+    }
+  }, [brandingShowedEffect]);
 
   return (
     <div
@@ -104,7 +147,7 @@ const OurServices = ({ setRef }) => {
                     />
                   </Col>
                   <Col xs="2" />
-                  <Col className="zIndex2" xs="4" className="mt-5">
+                  <Col xs="4" className="mt-5 zIndex2">
                     <img
                       alt="..."
                       src={require("assets/img/nodejs.png")}
@@ -116,7 +159,7 @@ const OurServices = ({ setRef }) => {
                       }}
                     />
                   </Col>
-                  <Col className="zIndex2" xs="4" className="mt-5">
+                  <Col xs="4" className="mt-5 zIndex2">
                     <img
                       alt="..."
                       src={require("assets/img/mongodb.png")}
@@ -187,7 +230,10 @@ const OurServices = ({ setRef }) => {
                 execute branding strategies to create solid, memorable brands
                 and take your company to another level!
               </p>
-              <div className="our-clients mt-5 mb-5 mb-md-0">
+              <div
+                className="our-clients mt-5 mb-5 mb-md-0"
+                ref={brandingTechsRef}
+              >
                 <Container>
                   <Row>
                     <Col className="ml-auto zIndex2" xs="3">
@@ -255,7 +301,10 @@ const OurServices = ({ setRef }) => {
                 execute branding strategies to create solid, memorable brands
                 and take your company to another level!
               </p>
-              <div className="our-clients mt-5 mb-5 mb-md-0">
+              <div
+                className="our-clients mt-5 mb-5 mb-md-0"
+                ref={brandingTechsRef}
+              >
                 <Container>
                   <Row>
                     <Col className="ml-auto zIndex2" xs="3">

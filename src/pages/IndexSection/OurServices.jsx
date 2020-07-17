@@ -52,13 +52,13 @@ const OurServices = ({ setRef }) => {
   React.useEffect(() => {
     if (brandingShowedEffect) {
       setPSDFilter("none");
-      setTimeout(() => setPSDFilter(semiWhiteFilter), 400);
-      setTimeout(() => setIllustratorFilter("none"), 400);
-      setTimeout(() => setIllustratorFilter(semiWhiteFilter), 800);
-      setTimeout(() => setXDFilter("none"), 800);
-      setTimeout(() => setXDFilter(semiWhiteFilter), 1200);
-      setTimeout(() => setCinemaFilter("none"), 1200);
-      setTimeout(() => setCinemaFilter(semiWhiteFilter), 1600);
+      setTimeout(() => setPSDFilter(semiWhiteFilter), 500);
+      setTimeout(() => setIllustratorFilter("none"), 500);
+      setTimeout(() => setIllustratorFilter(semiWhiteFilter), 1000);
+      setTimeout(() => setXDFilter("none"), 1000);
+      setTimeout(() => setXDFilter(semiWhiteFilter), 1500);
+      setTimeout(() => setCinemaFilter("none"), 1500);
+      setTimeout(() => setCinemaFilter(semiWhiteFilter), 2000);
     }
   }, [brandingShowedEffect]);
 

@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1d5a40845f2912ec61e2e7507380764f",
+    "revision": "42993efd20c2009417fef4f5c0320077",
     "url": "/michroma/press/index.html"
   },
   {
-    "revision": "91d2947da59397cb7a89",
+    "revision": "ada9eaa546d3e01418fc",
     "url": "/michroma/press/static/css/main.bcc7f53d.chunk.css"
   },
   {
-    "revision": "f25758ad74e64611a33d",
-    "url": "/michroma/press/static/js/2.ddd493e3.chunk.js"
+    "revision": "0ee18c36430a7b8af238",
+    "url": "/michroma/press/static/js/2.5b9425c7.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/michroma/press/static/js/2.ddd493e3.chunk.js.LICENSE.txt"
+    "url": "/michroma/press/static/js/2.5b9425c7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "91d2947da59397cb7a89",
-    "url": "/michroma/press/static/js/main.a9f4638a.chunk.js"
+    "revision": "ada9eaa546d3e01418fc",
+    "url": "/michroma/press/static/js/main.19c7253d.chunk.js"
   },
   {
     "revision": "71483e970295ccd55c51",

@@ -19,7 +19,6 @@ const getSecureContexts = (certs) => {
 };
 
 const credentials = {
-  // A function that will be called if the client supports SNI TLS extension.
   SNICallback: (servername, cb) => {
     const ctx = getSecureContexts(certs)[servername];
 

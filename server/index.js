@@ -20,7 +20,7 @@ app.use(
 app.use("/email", emailRoutes);
 app.get("*", function (req, res) {
   switch (req.headers.host) {
-    case "michroma.test": {
+    case "michroma.co": {
       if (req.url === "/press") {
         return res.sendFile("index.html", {
           root: path.join(__dirname, "pages/michroma/press"),

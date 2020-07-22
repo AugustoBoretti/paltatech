@@ -1,6 +1,6 @@
 const path = require("path");
 const http = require("http");
-const https = require("https");
+//const https = require("https");
 const express = require("express");
 const app = express();
 const credentials = require("./private/certification/siteCredentials");
@@ -16,6 +16,10 @@ app.use(
 app.use(
   "/michroma/press/static",
   express.static(path.join(__dirname, "pages/michroma/press/static"))
+);
+app.use(
+  "/.well-known/acme-challenge",
+  express.static(path.join(__dirname, ".well-known/acme-challenge"))
 );
 app.use("/email", emailRoutes);
 app.get("*", function (req, res) {

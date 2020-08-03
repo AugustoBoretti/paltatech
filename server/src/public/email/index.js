@@ -1,4 +1,4 @@
-const email =
+const userEmail = (name, lastName) =>
   '<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="full" object="drag-module" bgcolor="#303030" c-style="not4BG" style="background-color: rgb(48, 48, 48);">\n' +
   "    <tbody>\n" +
   '    <tr mc:repeatable="">\n' +
@@ -31,7 +31,7 @@ const email =
   "                                            <!-- Text -->\n" +
   '                                            <table width="352" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">\n' +
   "                                                <tbody><tr>\n" +
-  '                                                    <td valign="middle" width="352" style="text-align: center; font-family: Helvetica, Arial, sans-serif; font-size: 67px; color: #ffffff; line-height: 72px; font-weight: 100; word-break:break-all;" t-style="not4WhiteText" class="fullCenter" mc:edit="22" object="text-editable">\n' +
+  '                                                    <td valign="middle" width="352" style="text-align: center; font-family: Helvetica, Arial, sans-serif; font-size: 30px; color: #ffffff; line-height: 72px; font-weight: 100; word-break:break-all;" t-style="not4WhiteText" class="fullCenter" mc:edit="22" object="text-editable">\n' +
   "                                                        <!--[if !mso]><!-->\n" +
   "                                                        <span style=\"font-family: 'proxima_novathin', Helvetica; font-weight: normal;\"><!--<![endif]-->\n" +
   '                                                        <singleline style="white-space: nowrap">Hello from PALTA!</singleline><!--[if !mso]><!-->\n' +
@@ -140,7 +140,11 @@ const email =
   "\n" +
   "                                                            <tbody><tr>\n" +
   '                                                                <td valign="middle" width="100%" style="text-align: center; font-family: Helvetica, Arial, sans-serif; font-size: 34px; color: #ffffff; line-height: 44px; font-weight: bold;" t-style="not4BodyText" class="fullCenter" mc:edit="25" object="text-editable">\n' +
-  "                                                                    <!--[if !mso]><!--><span style=\"font-family: 'proxima_novalight', Helvetica; font-weight: normal;\"><!--<![endif]--><singleline>Darryl Strong</singleline><!--[if !mso]><!--></span><!--<![endif]-->\n" +
+  "                                                                    <!--[if !mso]><!--><span style=\"font-family: 'proxima_novalight', Helvetica; font-weight: normal;\"><!--<![endif]--><singleline>" +
+  name +
+  " " +
+  lastName +
+  "</singleline><!--[if !mso]><!--></span><!--<![endif]-->\n" +
   "                                                                </td>\n" +
   "                                                            </tr>\n" +
   "                                                            </tbody></table>\n" +
@@ -276,4 +280,14 @@ const email =
   "    </tbody>\n" +
   "</table>";
 
-module.exports = email;
+const adminEmail = ({
+  name,
+  lastName,
+  email,
+  message,
+}) => `<p>Nombre: ${name}</p>
+   <p>Apellido: ${lastName}</p>
+   <p>E-Mail: ${email}</p>
+   <p>Mensaje: ${message || "No comentó nada"}</p>`;
+
+module.exports = { userEmail, adminEmail };

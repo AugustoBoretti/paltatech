@@ -25,6 +25,7 @@ import OurServices from "./IndexSection/OurServices";
 import BackedBy from "./IndexSection/BackedBy";
 import OurWorks from "./IndexSection/OurWorks";
 import Sidebar from "../customComponents/Sidebar/Sidebar";
+import { NotificationProvider } from "../contexts/notificationContext";
 
 const Wrapper = React.createRef();
 const IndexRef = React.createRef();
@@ -52,18 +53,20 @@ const Index = () => {
 
   return (
     <div>
-      <ColorNavbar firstRef={OurServicesRef} />
-      <Sidebar references={references} />
-      <div className="wrapper" ref={Wrapper}>
-        <IndexHeader setRef={IndexRef} nextSection={OurServicesRef} />
-        <div className="main">
-          <OurServices setRef={OurServicesRef} />
-          <WhyPalta setRef={WhyPaltaRef} />
-          <BackedBy setRef={BackedByRef} />
-          <OurWorks setRef={OurWorksRef} />
-          <GetInTouch setRef={GetInTouchRef} />
+      <NotificationProvider>
+        <ColorNavbar firstRef={OurServicesRef} />
+        <Sidebar references={references} />
+        <div className="wrapper" ref={Wrapper}>
+          <IndexHeader setRef={IndexRef} nextSection={OurServicesRef} />
+          <div className="main">
+            <OurServices setRef={OurServicesRef} />
+            <WhyPalta setRef={WhyPaltaRef} />
+            <BackedBy setRef={BackedByRef} />
+            <OurWorks setRef={OurWorksRef} />
+            <GetInTouch setRef={GetInTouchRef} />
+          </div>
         </div>
-      </div>
+      </NotificationProvider>
     </div>
   );
 };

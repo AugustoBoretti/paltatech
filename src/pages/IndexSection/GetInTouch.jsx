@@ -16,6 +16,8 @@
 */
 import React from "react";
 
+import axios from "axios";
+
 import classnames from "classnames";
 // reactstrap components
 import {
@@ -37,7 +39,7 @@ import {
 } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
 
-import axios from "axios";
+import { NotificationContext } from "../../contexts/notificationContext";
 
 const nameRef = React.createRef();
 const lastNameRef = React.createRef();
@@ -46,12 +48,15 @@ const messageRef = React.createRef();
 const isRobotRef = React.createRef();
 
 const GetInTouch = ({ setRef }) => {
+  const { pushNotification } = React.useContext(NotificationContext);
   const [isNameValid, setIsNameValid] = React.useState(null);
   const [isLastNameValid, setIsLastNameValid] = React.useState(null);
   const [isEmailValid, setIsEmailValid] = React.useState(null);
   const [isRobot, setIsRobot] = React.useState(null);
+  const [isSendingEmail, setIsSendingEmail] = React.useState(false);
 
   const sendEmail = () => {
+    setIsSendingEmail(true);
     const name = nameRef.current.value.trim();
     const lastName = lastNameRef.current.value.trim();
     const email = emailRef.current.value.trim();
@@ -72,14 +77,45 @@ const GetInTouch = ({ setRef }) => {
     setIsEmailValid(!isEmailValid);
     setIsRobot(isRobotChecked);
 
-    if (validations.some((isNotValid) => isNotValid)) return;
+    if (validations.some((isNotValid) => isNotValid)) {
+      return setIsSendingEmail(false);
+    }
 
-    axios.post("/email", {
-      name,
-      lastName,
-      email,
-      message: messageRef.current.value,
-    });
+    axios
+      .post(
+        "/email",
+        {
+          name,
+          lastName,
+          email,
+          message: messageRef.current.value,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json;charset=UTF-8",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      )
+      .then((res) => {
+        nameRef.current.value = "";
+        lastNameRef.current.value = "";
+        emailRef.current.value = "";
+        messageRef.current.value = "";
+        isRobotRef.current.checked = false;
+        pushNotification();
+      })
+      .catch((err) => {
+        pushNotification({
+          color: "danger",
+          title: "Oops..",
+          message:
+            "There was an error while sending the E-Mail. Please try again!",
+        });
+      })
+      .finally(() => {
+        setIsSendingEmail(false);
+      });
   };
 
   return (
@@ -278,8 +314,9 @@ const GetInTouch = ({ setRef }) => {
                         className="pull-right"
                         color="success"
                         onClick={sendEmail}
+                        disabled={isSendingEmail}
                       >
-                        Send Message
+                        {isSendingEmail ? "Sending Message..." : "Send Message"}
                       </Button>
                     </Col>
                   </Row>

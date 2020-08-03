@@ -2,9 +2,19 @@ const path = require("path");
 const http = require("http");
 const https = require("https");
 const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const app = express();
 const emailRoutes = require("./src/routes/emailRoute");
 const credentials = require("./private/certification/credentials");
+
+app.use(cors());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+app.use(bodyParser.json());
 
 app.use("/static", express.static(path.join(__dirname, "..", "build/static")));
 app.use(
@@ -19,7 +29,9 @@ app.use(
   "/.well-known/acme-challenge",
   express.static(path.join(__dirname, ".well-known/acme-challenge"))
 );
+
 app.use("/email", emailRoutes);
+
 app.get("*", function (req, res) {
   switch (req.headers.host) {
     case "michroma.co": {

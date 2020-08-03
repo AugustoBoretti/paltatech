@@ -42,13 +42,13 @@ const ColorNavbar = ({ firstRef }) => {
               <span className="ml-2">PALTA •</span> TECH
             </NavbarBrand>
             <UncontrolledTooltip delay={0} target="brand">
-              Designed and coded with ❤️ by Palta{" "}
+              Designed and coded with <span>❤️</span> by Palta{" "}
               <span className="text-success">Tech</span>
             </UncontrolledTooltip>
           </div>
         </Container>
       </Navbar>
-      <Navbar className="fixed-top navbar-transparent filter-blur" expand="lg">
+      <Navbar className="fixed-top navbar-transparent filter-blur">
         <Container>
           <div className="navbar-translate">
             <NavbarBrand to="/" tag={Link} id="brand">
@@ -60,7 +60,7 @@ const ColorNavbar = ({ firstRef }) => {
               <span className="ml-2">PALTA •</span> TECH
             </NavbarBrand>
             <UncontrolledTooltip delay={0} target="brand">
-              Designed and coded with ❤️ by Palta{" "}
+              Designed and coded with <span>❤️</span> by Palta{" "}
               <span className="text-success">Tech</span>
             </UncontrolledTooltip>
           </div>

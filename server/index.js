@@ -6,8 +6,6 @@ const app = express();
 const emailRoutes = require("./src/routes/emailRoute");
 const credentials = require("./private/certification/credentials");
 
-// add middlewares
-
 app.use("/static", express.static(path.join(__dirname, "..", "build/static")));
 app.use(
   "/michroma/static",

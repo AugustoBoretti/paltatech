@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
-import { red } from "@material-ui/core/colors";
 
 const brandingTechsRef = React.createRef();
 
@@ -46,7 +45,7 @@ const OurServices = ({ setRef }) => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [render]);
+  }, [render, brandingShowedEffect]);
 
   // Animation starts!
   React.useEffect(() => {

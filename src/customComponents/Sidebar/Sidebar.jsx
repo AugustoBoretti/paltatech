@@ -35,7 +35,7 @@ const Sidebar = ({ references }) => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [render]);
+  }, [render, indexHeaderRef]);
 
   return (
     <div className={isVisible ? "show-sidebar" : "hidden"}>

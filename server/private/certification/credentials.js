@@ -20,20 +20,10 @@ const getSecureContexts = (certs) => {
 
 const credentials = {
   SNICallback: (servername, cb) => {
-    const ctx = getSecureContexts(certs)[servername];
-
-    if (!ctx) {
-      console.log(`Not found SSL certificate for host: ${servername}`);
-    } else {
-      console.log(
-        `SSL certificate has been found and assigned to ${servername}`
-      );
-    }
-
     if (cb) {
-      cb(null, ctx);
+      cb(null, getSecureContexts(certs)[servername]);
     } else {
-      return ctx;
+      return getSecureContexts(certs)[servername];
     }
   },
 };

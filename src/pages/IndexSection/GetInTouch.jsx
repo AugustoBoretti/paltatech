@@ -26,7 +26,6 @@ import {
   CardTitle,
   Col,
   Container,
-  Form,
   FormGroup,
   Input,
   InputGroup,
@@ -38,7 +37,51 @@ import {
 } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
 
+import axios from "axios";
+
+const nameRef = React.createRef();
+const lastNameRef = React.createRef();
+const emailRef = React.createRef();
+const messageRef = React.createRef();
+const isRobotRef = React.createRef();
+
 const GetInTouch = ({ setRef }) => {
+  const [isNameValid, setIsNameValid] = React.useState(null);
+  const [isLastNameValid, setIsLastNameValid] = React.useState(null);
+  const [isEmailValid, setIsEmailValid] = React.useState(null);
+  const [isRobot, setIsRobot] = React.useState(null);
+
+  const sendEmail = () => {
+    const name = nameRef.current.value.trim();
+    const lastName = lastNameRef.current.value.trim();
+    const email = emailRef.current.value.trim();
+    const isRobotChecked = isRobotRef.current.checked;
+    const emailValidation = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    const validations = [
+      name.length < 2,
+      lastName.length < 2,
+      !emailValidation.test(email),
+      !isRobotChecked,
+    ];
+
+    const [isNameValid, isLastNameValid, isEmailValid] = validations;
+
+    setIsNameValid(!isNameValid);
+    setIsLastNameValid(!isLastNameValid);
+    setIsEmailValid(!isEmailValid);
+    setIsRobot(isRobotChecked);
+
+    if (validations.some((isNotValid) => isNotValid)) return;
+
+    axios.post("/email", {
+      name,
+      lastName,
+      email,
+      message: messageRef.current.value,
+    });
+  };
+
   return (
     <div
       className="section section-basic"
@@ -64,8 +107,10 @@ const GetInTouch = ({ setRef }) => {
               </strong>
             </h1>
             <h4 className="description">
-              You need more information? Check what other persons are saying
-              about our product. They are very happy with their purchase.
+              You need more information? Send us an E-Mail or contact us through{" "}
+              <a href="https://wa.me/543413721877" className="text-success">
+                Whatsapp <i className="fab fa-whatsapp" />
+              </a>
             </h4>
             <div>
               <div className="btn-wrapper profile text-left mt-5">
@@ -111,102 +156,134 @@ const GetInTouch = ({ setRef }) => {
           <Col className="ml-auto mr-auto" md="5">
             <Zoom right>
               <Card className="card-contact card-raised card-transparent">
-                <Form id="contact-form" method="post" role="form">
-                  <CardHeader className="text-center">
-                    <CardTitle tag="h4">Contact Us</CardTitle>
-                  </CardHeader>
-                  <CardBody>
-                    <Row>
-                      <Col xs="12" md="6">
-                        <label>First name</label>
+                <CardHeader className="text-center">
+                  <CardTitle tag="h4">Contact Us</CardTitle>
+                </CardHeader>
+                <CardBody>
+                  <Row>
+                    <Col xs="12" md="6">
+                      <label>First name</label>
+                      <InputGroup
+                        className={classnames({
+                          "input-group-focus": true,
+                        })}
+                      >
+                        <InputGroupAddon addonType="prepend">
+                          <InputGroupText
+                            className={`border-${
+                              isNameValid !== false ? "success" : "danger"
+                            }`}
+                          >
+                            <i className="tim-icons icon-single-02" />
+                          </InputGroupText>
+                        </InputGroupAddon>
+                        <Input
+                          aria-label="First Name..."
+                          placeholder="First Name..."
+                          name="name"
+                          type="text"
+                          className={`border-${
+                            isNameValid !== false ? "success" : "danger"
+                          }`}
+                          innerRef={nameRef}
+                        />
+                      </InputGroup>
+                    </Col>
+                    <Col xs="12" md="6">
+                      <FormGroup>
+                        <label>Last name</label>
                         <InputGroup
                           className={classnames({
                             "input-group-focus": false,
                           })}
                         >
                           <InputGroupAddon addonType="prepend">
-                            <InputGroupText className={`border-success`}>
-                              <i className="tim-icons icon-single-02" />
+                            <InputGroupText
+                              className={`border-${
+                                isLastNameValid !== false ? "success" : "danger"
+                              }`}
+                            >
+                              <i className="tim-icons icon-caps-small" />
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                            aria-label="First Name..."
-                            placeholder="First Name..."
+                            aria-label="Last Name..."
+                            placeholder="Last Name..."
+                            name="lastname"
                             type="text"
-                            className={`border-success`}
+                            className={`border-${
+                              isLastNameValid !== false ? "success" : "danger"
+                            }`}
+                            innerRef={lastNameRef}
                           />
                         </InputGroup>
-                      </Col>
-                      <Col xs="12" md="6">
-                        <FormGroup>
-                          <label>Last name</label>
-                          <InputGroup
-                            className={classnames({
-                              "input-group-focus": false,
-                            })}
-                          >
-                            <InputGroupAddon addonType="prepend">
-                              <InputGroupText className={`border-success`}>
-                                <i className="tim-icons icon-caps-small" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <Input
-                              aria-label="Last Name..."
-                              placeholder="Last Name..."
-                              type="text"
-                              className={`border-success`}
-                            />
-                          </InputGroup>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <FormGroup>
-                      <label>Email address</label>
-                      <InputGroup
-                        className={classnames({
-                          "input-group-focus": false,
-                        })}
-                      >
-                        <InputGroupAddon addonType="prepend">
-                          <InputGroupText className={`border-success`}>
-                            <i className="tim-icons icon-email-85" />
-                          </InputGroupText>
-                        </InputGroupAddon>
-                        <Input
-                          placeholder="Email Here..."
-                          type="text"
-                          className={`border-success`}
-                        />
-                      </InputGroup>
-                    </FormGroup>
-                    <FormGroup>
-                      <label>Your message</label>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <FormGroup>
+                    <label>Email address</label>
+                    <InputGroup
+                      className={classnames({
+                        "input-group-focus": false,
+                      })}
+                    >
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText
+                          className={`border-${
+                            isEmailValid !== false ? "success" : "danger"
+                          }`}
+                        >
+                          <i className="tim-icons icon-email-85" />
+                        </InputGroupText>
+                      </InputGroupAddon>
                       <Input
-                        id="message"
-                        name="message"
-                        rows="6"
-                        type="textarea"
-                        className={`border-success`}
+                        placeholder="Email Here..."
+                        name="email"
+                        type="text"
+                        className={`border-${
+                          isEmailValid !== false ? "success" : "danger"
+                        }`}
+                        innerRef={emailRef}
                       />
-                    </FormGroup>
-                    <Row>
-                      <Col md="6">
-                        <FormGroup check>
-                          <Label check>
-                            <Input type="checkbox" />
-                            <span className={`form-check-sign bg-success`} />
-                            I'm not a robot
-                          </Label>
-                        </FormGroup>
-                      </Col>
-                      <Col md="6">
-                        <Button className="pull-right" color="success">
-                          Send Message
-                        </Button>
-                      </Col>
-                    </Row>
-                  </CardBody>
-                </Form>
+                    </InputGroup>
+                  </FormGroup>
+                  <FormGroup>
+                    <label>Your message</label>
+                    <Input
+                      id="message"
+                      name="message"
+                      rows="6"
+                      type="textarea"
+                      className={`border-success`}
+                      innerRef={messageRef}
+                    />
+                  </FormGroup>
+                  <Row>
+                    <Col md="6">
+                      <FormGroup check>
+                        <Label
+                          check
+                          className={`text-${
+                            isRobot !== false ? "" : "danger"
+                          }`}
+                        >
+                          <Input type="checkbox" innerRef={isRobotRef} />
+                          <span className={`form-check-sign bg-success`} />
+                          I'm not a robot
+                        </Label>
+                      </FormGroup>
+                    </Col>
+                    <Col md="6">
+                      <Button
+                        className="pull-right"
+                        color="success"
+                        onClick={sendEmail}
+                      >
+                        Send Message
+                      </Button>
+                    </Col>
+                  </Row>
+                </CardBody>
               </Card>
             </Zoom>
           </Col>

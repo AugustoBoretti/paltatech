@@ -25,7 +25,6 @@ import OurServices from "./IndexSection/OurServices";
 import BackedBy from "./IndexSection/BackedBy";
 import OurWorks from "./IndexSection/OurWorks";
 import Sidebar from "../customComponents/Sidebar/Sidebar";
-import Switch from "../customComponents/Switch/Switch";
 
 const Wrapper = React.createRef();
 const IndexRef = React.createRef();

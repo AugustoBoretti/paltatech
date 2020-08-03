@@ -14,4 +14,15 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.post("/", async (req, res, next) => {
+  try {
+    console.log(123);
+  } catch (e) {
+    response.status = false;
+    response.code = 500;
+  } finally {
+    await res.status(response.code).json({ status: response.status });
+  }
+});
+
 module.exports = router;

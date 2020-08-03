@@ -20,9 +20,6 @@ import { Button, Container } from "reactstrap";
 
 import MovingText from "../Text/MovingText";
 
-import lightning from "assets/sounds/lightning.mp3";
-import lightningEnd from "assets/sounds/lightning_end.mp3";
-
 const Index = ({ setRef, nextSection }) => {
   const scrollIntoView = (Section, extraTop = 0) => {
     window.scrollTo({

@@ -21,7 +21,7 @@ const sendEmail = async ({ name, lastName, email, message }) => {
 
   const notificationToAdmin = {
     from: '"Palta Tech 🥑" <hello@palta.tech>',
-    to: "aleetidele@gmail.com",
+    to: auth.user,
     subject: "Contact received 🥑🚀",
     text: "A new potential customer sent an E-Mail! 🎉",
     html: adminEmail({ name, lastName, email, message }),

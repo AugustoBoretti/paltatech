@@ -34,6 +34,7 @@ app.use("/email", emailRoutes);
 
 app.get("*", function (req, res) {
   switch (req.headers.host) {
+    case "www.michroma.co":
     case "michroma.co": {
       if (req.url === "/press") {
         return res.sendFile("index.html", {

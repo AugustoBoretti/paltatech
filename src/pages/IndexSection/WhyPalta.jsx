@@ -59,12 +59,12 @@ const WhyPalta = ({ setRef }) => {
                   />
                 </div>
                 <h2 className="info-title">
-                  Hearing and understanding your startup needs
+                  Understanding what your startup needs.
                 </h2>
                 <h4 className="description">
-                  Our diverse team composed by scientists, developers and
-                  designers, are all your startup needs to turn your ideas into
-                  solutions!
+                  Our diverse team combine deep science experience,
+                  outstanding developers and designers.
+                  All your startup needs to turn your ideas into solutions!
                 </h4>
               </div>
             </Col>
@@ -81,7 +81,7 @@ const WhyPalta = ({ setRef }) => {
                 <h4 className="description">
                   Our company does not aim to be just another number on your
                   contact list. We aim to be a reliable partner, helping you to
-                  achieve all the milestones your company has.
+                  achieve all the milestones your company has by trusting us what we are experts on.
                 </h4>
               </div>
             </Col>
@@ -98,12 +98,8 @@ const WhyPalta = ({ setRef }) => {
                 </div>
                 <h2 className="info-title">Showing why you are the best!</h2>
                 <p className="description">
-                  We love deeptech companies, but we love more helping them to
-                  change the world!
-                </p>
-                <p className="description">
-                  Let us help you showing your public, what your awesome company
-                  means.
+                  We love deeptech companies, but we love more helping to
+                  show your public, how awesome your company is.
                 </p>
               </div>
             </Col>

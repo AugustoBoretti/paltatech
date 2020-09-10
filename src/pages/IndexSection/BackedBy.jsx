@@ -28,10 +28,8 @@ const BackedBy = ({ setRef }) => {
               </strong>
             </h1>
             <h4>
-              It is scientifically proven that performing tasks with the correct
-              tools reduces time, costs and increases quality. This is something
-              we take seriously, and it is the reason why we work with leading
-              companies in every need.
+              It is scientifically proven that performing tasks with the correct tools
+              reduces time, costs and increases quality.
             </h4>
             <h4>What helps us achieve the highest quality standards?</h4>
           </Col>

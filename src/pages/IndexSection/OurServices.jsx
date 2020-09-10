@@ -93,18 +93,12 @@ const OurServices = ({ setRef }) => {
               <div style={{ marginTop: "-25px" }}>development</div>
             </h3>
             <p className="text-center fs-15">
-              A website is the online representation of your company! Doing it
-              well can take your business to the next level. We create awesome
-              and easy to navigate websites. Modern and responsive for all kind
-              of devices.
+              We create awesome and easy to navigate websites.
+              Modern and responsive for all kind of devices.
             </p>
             <p className="text-center fs-15">
-              If each company has its own essence, why should your site be
-              similar to another?
-            </p>
-            <p className="text-center fs-15">
-              We create specialized designs for each client, seeking to take
-              their image to another level.
+              We create specialized designs for each client, takinge your
+              company to the next level.
             </p>
             <div className="our-clients mt-5 mb-5 mb-md-0">
               <Container>
@@ -224,10 +218,9 @@ const OurServices = ({ setRef }) => {
                 branding
               </h3>
               <p className="text-center fs-15">
-                We design the corporate identity of your brand to reflect its
-                value and build the perception of your customers. We plan and
-                execute branding strategies to create solid, memorable brands
-                and take your company to another level!
+                We design the essence of your brand to reflect its value and build the
+                perception of your customers. We plan and execute branding strategies to create solid,
+                memorable and unique brands.
               </p>
               <div
                 className="our-clients mt-5 mb-5 mb-md-0"
@@ -295,10 +288,9 @@ const OurServices = ({ setRef }) => {
                 branding
               </h3>
               <p className="text-center fs-15">
-                We design the corporate identity of your brand to reflect its
-                value and build the perception of your customers. We plan and
-                execute branding strategies to create solid, memorable brands
-                and take your company to another level!
+                We design the essence of your brand to reflect its value and build
+                the perception of your customers. We plan and execute branding strategies
+                to create solid, memorable and unique brands.
               </p>
               <div
                 className="our-clients mt-5 mb-5 mb-md-0"

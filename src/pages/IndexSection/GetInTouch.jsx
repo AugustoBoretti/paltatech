@@ -38,7 +38,7 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 import Zoom from "react-reveal/Zoom";
-
+import emailJs from 'emailjs-com'
 import { NotificationContext } from "../../contexts/notificationContext";
 
 const nameRef = React.createRef();
@@ -56,6 +56,7 @@ const GetInTouch = ({ setRef }) => {
   const [isSendingEmail, setIsSendingEmail] = React.useState(false);
 
   const sendEmail = () => {
+    console.log('SENDING EMAIL')
     setIsSendingEmail(true);
     const name = nameRef.current.value.trim();
     const lastName = lastNameRef.current.value.trim();
@@ -81,22 +82,14 @@ const GetInTouch = ({ setRef }) => {
       return setIsSendingEmail(false);
     }
 
-    axios
-      .post(
-        "/email",
-        {
-          name,
-          lastName,
-          email,
-          message: messageRef.current.value,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json;charset=UTF-8",
-            "Access-Control-Allow-Origin": "*",
-          },
-        }
-      )
+    var templateParams = {
+      reply_to: email,
+      from_name: `${name} ${lastName}`,
+      to_name: 'Palta Tech',
+      message_html: messageRef.current.value,
+    };
+
+    emailJs.send('gmail', 'paltaTechEmail', templateParams, 'user_qoampBeWqLlbLgGrHdLWp')
       .then((res) => {
         nameRef.current.value = "";
         lastNameRef.current.value = "";
